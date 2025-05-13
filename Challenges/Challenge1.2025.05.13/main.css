@@ -10,7 +10,20 @@ body {
 .container {
     width:800px;
     height: 1400px; 
-    margin: 0 auto;  
+    margin: 0 auto;
+
+    box-sizing: border-box;
+    /* include padding, gap and margin in the total width/height */
+
+    max-width: 800px;
+    /* set max with of the container element */
+    
+    border: 40px solid orange;
+    /* set border size, style, and colour  */
+    
+    padding-left: 40px;
+    padding-right: 40px;
+    /* set padding for left and right */
 }
 
 .photo-caption {
