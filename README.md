@@ -1,2 +1,0 @@
-# COMP1054.Summer2025
-Assignments for COMP1054 - Interface Design Using CSS (Summer 2025).
