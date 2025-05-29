@@ -33,9 +33,10 @@ body {
     padding: 20px;
     border-radius: 10px;
     text-align: center;
-    background-color: var(--background-colour); /* not actually visible; background image fills profile card */
+    background-color: var(--background-colour);
+    /* not actually visible though; the background image fills the profile card */
     
-    /* background image: fill and center image, make it not repeat */
+    /* background image: */
     background-image: url(images/profileCardBackgroundImage.jpg);
     background-size: cover;
     background-repeat: no-repeat;
