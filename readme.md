@@ -1,3 +1,3 @@
 Assignments for COMP1054 - Interface Design Using CSS (Summer 2025).
 
-There will be a separate branch for each assignment.
+Going to try splitting up main branch in a different way, so I can have a GitHub pages address for each assignment.
