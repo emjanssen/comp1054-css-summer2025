@@ -1,0 +1,110 @@
+:root {
+    --page-background-colour: #dffdff;
+    --banner-background-colour: #b6e1e5;
+    --banner-font-color: #0d2227;
+}
+
+.page-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-top: 5rem;
+    gap: 2rem;
+}
+
+.intro {
+    display: flex;
+    flex-direction: column;
+    border: 3px solid red;
+    min-width: 20%;
+}
+
+[role="banner"] {
+    background-color: var(--banner-background-colour);
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    border: 2px yellow solid;
+}
+
+#zen-supporting {
+    border: 3px green solid;
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+#zen-preamble h3 {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#zen-explanation,
+#zen-participation,
+#zen-benefits,
+#zen-requirements {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px orange solid;
+    margin-top: 1rem;
+    
+}
+
+.sidebar {
+    border: 3px blue solid;
+    min-width: 15%;
+    margin: .5rem;
+}
+
+#design-selection,
+#design-archives,
+#zen-resources {
+    border: 1px purple solid;
+    padding: .5rem;
+    width: 100%;
+}
+
+#design-selection li,
+#design-archives li,
+#zen-resources li {
+    margin-bottom: 1rem;
+}
+
+#design-selection ul,
+#design-archives ul,
+#zen-resources ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+footer {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    padding: .25rem;
+    z-index: 1000;
+    border: 2px orange solid;
+    justify-content: space-evenly;
+    box-sizing: border-box;
+}
+
+header {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    background-color: var(--banner-background-colour);
+    z-index: 1000;
+    justify-content: space-evenly;
+    box-sizing: border-box;
+}
