@@ -1,7 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+
 :root {
-    --page-background-colour: #dffdff;
-    --banner-background-colour: #b6e1e5;
-    --banner-font-color: #0d2227;
+    --page-background-colour: #fefae0;
+    --banner-background-colour: #f5f3cf;
+    --h1-h2-h3-font-color: #1a2516ce;
+    
+    --banner-font-color: #675a41;
+    --links-font-color: #675a41;
+    
+    --font-family-raleway: 'Raleway', sans-serif;
+    --font-family-varela-round: "Varela Round", sans-serif;
+}
+
+body {
+    background-color: var(--page-background-colour);
+}
+
+h1, h2, h3 {
+    font-family: var(--font-family-raleway);
+    color: var(--h1-h2-h3-font-color)
 }
 
 .page-wrapper {
@@ -11,30 +29,35 @@
     justify-content: space-between;
     margin-top: 5rem;
     gap: 2rem;
+    font-family: var(--font-family-varela-round);
+    
 }
 
 .intro {
     display: flex;
     flex-direction: column;
-    border: 3px solid red;
-    min-width: 20%;
+    text-align: center;
 }
 
 [role="banner"] {
     background-color: var(--banner-background-colour);
+    color: var(--banner-font-color);
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
-    border: 2px yellow solid;
+    gap: 2rem;
+    padding-left: 1.5rem;
 }
 
 #zen-supporting {
-    border: 3px green solid;
     display: flex;
     align-items: flex-start;
     gap: 1rem;
     padding-left: 1rem;
     padding-right: 1rem;
+}
+
+#zen-requirements {
+    order: 1;
 }
 
 #zen-preamble h3 {
@@ -50,22 +73,20 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: 1px orange solid;
-    margin-top: 1rem;
-    
+    margin-bottom: 3rem;
+    text-align: center;
 }
 
-.sidebar {
-    border: 3px blue solid;
-    min-width: 15%;
-    margin: .5rem;
+.sidebar, #zen-summary, #zen-preamble {
+    border: .25rem var(--banner-font-color) double;
+    padding: 1rem;
+    min-width: 15vw;
+    margin: 2rem;
 }
 
 #design-selection,
 #design-archives,
 #zen-resources {
-    border: 1px purple solid;
-    padding: .5rem;
     width: 100%;
 }
 
@@ -91,20 +112,22 @@ footer {
     text-align: center;
     padding: .25rem;
     z-index: 1000;
-    border: 2px orange solid;
     justify-content: space-evenly;
     box-sizing: border-box;
+    background-color: var(--banner-background-colour);
+    font-size: 1.1rem;
+    padding: .5rem;
 }
 
 header {
-    display: flex;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    text-align: center;
     background-color: var(--banner-background-colour);
     z-index: 1000;
-    justify-content: space-evenly;
-    box-sizing: border-box;
+}
+
+a {
+    color: var(--links-font-color);
 }
