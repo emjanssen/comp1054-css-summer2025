@@ -61,8 +61,9 @@ header {
     top: 0;
     left: 0;
     width: 100%;
+    /* pin at top and have it span the full page */
     background-color: var(--banner-background-colour);
-    z-index: 1000;
+    z-index: 1000;  /* keep it above all other items */
 }
 
 [role="banner"] {
@@ -74,12 +75,15 @@ header {
     align-items: center;
     gap: 1rem;
     padding-left: 1.5rem;
+    /* keep items to left of the header; add a gap between them
+    padding-left so there's a gap between leftmost banner item and the side of the page */
     font-size: var(--header-font-size);
 }
 
 header abbr {
     /*7. Descendant combinator */
     color: var(--header-abbr-font-color);
+    /* target just the word 'CSS' in the header */
 }
 
 /* body */
@@ -87,11 +91,13 @@ header abbr {
 body {
     height: 100vh;
     background: linear-gradient(45deg, var(--gradient-one-three-colours), var(--gradient-two-four-colours), var(--gradient-one-three-colours), var(--gradient-two-four-colours));
+    /*very subtle gradient that blends with other page colouring (i.e. header/footer and font colours) */
 }
 
 p {
     /* 1. Type selector */
     font-size: var(--p-font-size);
+    /* give all paragraph a default font size; i.e. default room size of 1rem */
 }
 
 h1,
@@ -100,71 +106,62 @@ h3 {
     font-family: var(--font-family-raleway);
     color: var(--h1-h2-h3-font-color);
     font-size: var(--h1-h2-h3-font-size);
+    /* font values for all headers */
 }
 
 .page-wrapper {
     /* 2. Class selector */
     display: flex;
-    flex-direction: row;
     align-items: flex-start;
     justify-content: space-between;
     padding-top: 5rem;
+    /* padding to provide space between header and the body conte t*/
     font-family: var(--font-family-varela-round);
 }
 
 .intro {
-    display: flex;
-    flex-direction: column;
     text-align: center;
+    /* center text in intro box */
 }
 
-/* Container for explanation, participation, benefits, requirements: */
+/* #zen-supporting section: container for explanation, participation, benefits, requirements: */ 
+
 #zen-supporting {
     /* 3. ID Selector */
     display: flex;
-    align-items: flex-start;
     margin-top: 1rem;
+    /*adds a bit more space between zen-supporting and the header */
     flex-wrap: wrap;
+    /*wrap because i want fourth item (i.e. requirements) to wrap over onto a new line */
 }
 
-#zen-explanation {
-    order: 1;
-}
-
-#zen-participation {
-    order: 2;
-}
-
-#zen-benefits {
-    order: 3;
-}
-
-#zen-requirements {
-    order: 4;
-}
-
+/* using flex, grow, and basis to spread out items in a way that mostly evens up their text lengths */
 #zen-explanation {
     flex-grow: 1;
     flex-shrink: 1;
     flex-basis: 10%;
+    /*10% makes explanation about the same height as participation */
 }
 
 #zen-participation {
     flex-grow: 1;
     flex-shrink: 1;
     flex-basis: 22%;
+    /*22% makes participation about the same height as explanation */
 }
 
 #zen-benefits {
     flex-grow: 1;
     flex-shrink: 1;
     flex-basis: 1%;
+    /*tiny blex-basis because benefits is such a short paragraph*/
 }
 
 #zen-requirements {
     flex-grow: 1;
     flex-shrink: 1;
     flex-basis: 80%;
+    /*wrapped over to second lane, so want it to fill most of the available space*/
 }
 
 #zen-explanation,
@@ -172,6 +169,7 @@ h3 {
 #zen-benefits {
     padding-left: 1rem;
     padding-right: 1rem;
+    /*tiny bit of space between these items */
 }
 
 #zen-explanation,
@@ -179,6 +177,7 @@ h3 {
 #zen-benefits,
 #zen-requirements {
     text-align: center;
+    /*center all text */
 }
 
 #zen-explanation>p,
@@ -186,6 +185,7 @@ h3 {
 #zen-participation>p,
 #zen-benefits>p,
 #zen-requirements>p {
+    /* paragraph font colour */
     color: var(--paragraph-body-font-color);
 }
 
@@ -195,7 +195,10 @@ h3 {
 #zen-benefits p::first-line,
 #zen-requirements p::first-line {
     font-style: oblique;
+    /*style first line of each paragraph*/
 }
+
+/* left and right sidebars */
 
 .sidebar,
 #zen-summary,
@@ -203,16 +206,14 @@ h3 {
     border: .25rem var(--banner-font-color) double;
     padding: 1rem;
     min-width: 15vw;
+    /*so it always fills up a decent bit of the viewport, instead of shrinking very small */
     margin: 2rem;
 }
 
 #design-archives h3~nav {
     /* 10. General sibling combinator */
     font-style: italic;
-}
-
-#zen-preamble {
-    margin-top: 0rem;
+    /*makes the 'archives' section of sidebar italic */
 }
 
 #zen-preamble h3+p {
@@ -224,6 +225,7 @@ h3 {
 #design-archives li,
 #zen-resources li {
     margin-bottom: 1rem;
+    /*bit of space between the list items */
 }
 
 #design-selection ul,
@@ -231,6 +233,7 @@ h3 {
 #zen-resources ul {
     list-style-type: none;
     padding-left: 0;
+    /*remove bullet points and also default built-in left padding */
 }
 
 /* footer */
@@ -241,10 +244,9 @@ footer {
     bottom: 0;
     left: 0;
     width: 100%;
-    text-align: center;
-    z-index: 1000;
+     z-index: 1000;
+    /*stick footer at the bottom, make it span full page; z-index so it stays on top of others item*/
     justify-content: space-evenly;
-    box-sizing: border-box;
     background-color: var(--banner-background-colour);
     padding: .5rem;
     font-size: var(--footer-font-size);
@@ -254,9 +256,12 @@ footer {
 
 a {
     display: inline-block;
-    transition-property: transform, color;
+    /*inline-block so transform property will work properly */
+    transition-property: transform;
     transition-duration: 0.3s;
     transition-timing-function: ease;
+    /* transition elements to enact when links are hovered over: short time and easy/smooth movement */
+    /* affects all links; body, sidebar, footer*/
 }
 
 a:link {
@@ -278,57 +283,81 @@ a:active {
     color: var(--links-active-font-color);
 }
 
-footer a {
-    transition-property: transform;
-    transition-duration: 0.3s;
-    transition-timing-function: ease;
-}
-
 footer a:hover {
     transform: scale(1.08);
-    /* making slightly bigger; no adjacent text in footer to overlap */
+    /* making footer links slightly bigger; no adjacent text in footer to overlap */
 }
 
-
 /* media queries */
+
+/* elements generally seem to scale decently well at different screen sizes 
+using one media query of up to 992px to enable better layouts for smaller screens */
 
 @media (max-width: 992px) {
     .page-wrapper {
         flex-direction: column;
-        border: 1px solid orange;
+        /*change from row to column, so items stack vertically */
     }
 
     #zen-supporting {
         flex-direction: column;
+        /*change from row to column, so items stack vertically */
         margin: 2rem;
+        /*bit of space around items so they're not squished right up against page edges */
     }
 
     .sidebar {
         text-align: center;
         margin-top: 0rem;
+        /*overwrite existing margin-top value; looks better with 0rem on smaller screen */
         margin-bottom: 5rem;
+        /*make sure there's space between sidebar and footer */
         width: 60%;
+        /*have sidebar always take up a decent bit of space */
         margin-left: auto;
         margin-right: auto;
+        /*set up equal spacing on each side of the sidebar*/
     }
 
     [role="banner"] {
         justify-content: center;
         padding-left: 0;
+        /*remove the left-padding that we have for larger sizes 
+        /*bigger screens put header content at flex-start (left) and then set up some spacing 
+        for smaller screen, just center all header items*/
     }
 
     #zen-preamble {
         margin-bottom: 0rem;
+        /*overwrite margin-bottom value; remove empty space that's too notable on smaller screens */
     }
 }
 
 @media only screen and (min-width: 993px) and (max-width: 1200px) {
     #zen-supporting {
         flex-direction: column;
+        /*want to keep stacking these items horizontally up to 1200px inclusive
+        after that, can go back to default row orientation for largest screens */
         margin-bottom: 4rem;
+        /*make sure to have space between body content and footer */
     }
 
     .sidebar {
         padding: 3rem;
+        /*bit of padding for better spacing between sidebar and zen-supporting paragraphs */
+    }
+}
+
+@media only screen and (min-width: 271px) and (max-width: 500px)  {
+    #zen-summary {
+        margin-top: 3.5rem;
+        /*make sure there is space between body and header on tiny screens */
+    }
+}
+
+@media only screen and (min-width: 0px) and (max-width: 270px)  {
+    #zen-summary {
+        margin-top: 5rem;
+        /*make sure there is space between body and header on the tinest screens (i'm not sure any devices actually runs this small, but just in case) */
     }
 }
