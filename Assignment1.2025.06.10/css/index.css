@@ -1,36 +1,116 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+/* Two custom web fonts */
+
+/* Requirements: 
+done 1. Type selector
+done 2. Class selector
+done 3. ID selector
+done 4. Attribute selector
+done 5. Pseudo-class selector
+done 6. Pseudo-element selector
+done 7. Descendant combinator
+done 8. Child combinator 
+done 9. Direct sibling combinator
+done 10. General sibling combinator */
+
+/* root */
 
 :root {
-    --page-background-colour: #fefae0;
+
+    /* background colours */
+
     --banner-background-colour: #f5f3cf;
+
+    /* gradient colors */
+
+    --gradient-one-three-colours: #f5f3cf;
+    --gradient-two-four-colours: #f5f2bf;
+    
+    /* font colours */
+
     --h1-h2-h3-font-color: #1a2516ce;
-    
     --banner-font-color: #675a41;
-    --links-font-color: #675a41;
-    
+    --header-abbr-font-color: #788342;
+    --paragraph-body-font-color: #241c0d;
+
+    /* font families */
+
     --font-family-raleway: 'Raleway', sans-serif;
     --font-family-varela-round: "Varela Round", sans-serif;
+
+    /* font sizes */
+
+    --header-font-size: 1rem;
+    --footer-font-size: 1.1rem;
+    --h1-h2-h3-font-size: 1.2rem;
+    --p-font-size: 1rem;
+
+    /* links */
+
+    --links-unvisted-font-color: #675a41;
+    --links-visted-font-color: #088145;
+    --links-hover-font-color: #eda520;
+    --links-active-font-color: #94af56;
 }
+
+/* header */
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--banner-background-colour);
+    z-index: 1000;
+}
+
+[role="banner"] {
+    /* 4. Attribute selector */
+    background-color: var(--banner-background-colour);
+    color: var(--banner-font-color);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1rem;
+    padding-left: 1.5rem;
+    font-size: var(--header-font-size);
+}
+
+header abbr {
+    /*7. Descendant combinator */
+    color: var(--header-abbr-font-color);
+}
+
+/* body */
 
 body {
     background-color: var(--page-background-colour);
+    height: 100vh;
+    background: linear-gradient(45deg, var(--gradient-one-three-colours), var(--gradient-two-four-colours), var(--gradient-one-three-colours), var(--gradient-two-four-colours));
 }
 
-h1, h2, h3 {
+p {
+    /* 1. Type selector */
+    font-size: var(--p-font-size);
+}
+
+h1,
+h2,
+h3 {
     font-family: var(--font-family-raleway);
-    color: var(--h1-h2-h3-font-color)
+    color: var(--h1-h2-h3-font-color);
+    font-size: var(--h1-h2-h3-font-size);
 }
 
 .page-wrapper {
+    /* 2. Class selector */
     display: flex;
     flex-direction: row;
     align-items: flex-start;
     justify-content: space-between;
-    margin-top: 5rem;
-    gap: 2rem;
+    padding-top: 5rem;
     font-family: var(--font-family-varela-round);
-    
 }
 
 .intro {
@@ -39,55 +119,106 @@ h1, h2, h3 {
     text-align: center;
 }
 
-[role="banner"] {
-    background-color: var(--banner-background-colour);
-    color: var(--banner-font-color);
-    display: flex;
-    align-items: center;
-    gap: 2rem;
-    padding-left: 1.5rem;
-}
-
+/* Container for explanation, participation, benefits, requirements: */
 #zen-supporting {
+    /* 3. ID Selector */
     display: flex;
     align-items: flex-start;
-    gap: 1rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
+    margin-top: 1rem;
+    flex-wrap: wrap;
 }
 
-#zen-requirements {
+#zen-explanation {
     order: 1;
 }
 
-#zen-preamble h3 {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+#zen-participation {
+    order: 2;
+}
+
+#zen-benefits {
+    order: 3;
+}
+
+#zen-requirements {
+    order: 4;
+}
+
+#zen-explanation {
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 10%;
+}
+
+#zen-participation {
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 22%;
+}
+
+#zen-benefits {
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 1%;
+}
+
+#zen-requirements {
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 80%
+}
+
+#zen-explanation,
+#zen-participation,
+#zen-benefits {
+    padding-left: 1rem;
+    padding-right: 1rem;
 }
 
 #zen-explanation,
 #zen-participation,
 #zen-benefits,
 #zen-requirements {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 3rem;
     text-align: center;
 }
 
-.sidebar, #zen-summary, #zen-preamble {
+#zen-explanation>p,
+/* 8. Child combinator */
+#zen-participation>p,
+#zen-benefits>p,
+#zen-requirements>p {
+    color: var(--paragraph-body-font-color);
+}
+
+#zen-explanation p::first-line,
+/* 6. Pseudo-element selector */
+#zen-participation p::first-line,
+#zen-benefits p::first-line,
+#zen-requirements p::first-line {
+    font-style: oblique;
+}
+
+.sidebar,
+#zen-summary,
+#zen-preamble {
     border: .25rem var(--banner-font-color) double;
     padding: 1rem;
     min-width: 15vw;
     margin: 2rem;
 }
 
-#design-selection,
-#design-archives,
-#zen-resources {
-    width: 100%;
+#design-archives h3~nav {
+    /* 10. General sibling combinator */
+    font-style: italic;
+}
+
+#zen-preamble {
+    margin-top: 0rem;
+}
+
+#zen-preamble h3+p {
+    /* 9. Direct sibling combinator */
+    font-style: italic;
 }
 
 #design-selection li,
@@ -103,6 +234,8 @@ h1, h2, h3 {
     padding-left: 0;
 }
 
+/* footer */
+
 footer {
     display: flex;
     position: fixed;
@@ -110,24 +243,48 @@ footer {
     left: 0;
     width: 100%;
     text-align: center;
-    padding: .25rem;
     z-index: 1000;
     justify-content: space-evenly;
     box-sizing: border-box;
     background-color: var(--banner-background-colour);
-    font-size: 1.1rem;
     padding: .5rem;
+    font-size: var(--footer-font-size);
 }
 
-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: var(--banner-background-colour);
-    z-index: 1000;
-}
+/* links */
 
 a {
-    color: var(--links-font-color);
+    display: inline-block;
+}
+
+a:link {
+    /* 5. Pseudo-class selector: */
+    color: var(--links-unvisted-font-color);
+}
+
+a:visited {
+    color: var(--links-visted-font-color);
+}
+
+a:hover {
+    color: var(--links-hover-font-color);
+    transform: scale(0.98);
+    /* making slightly smaller so it doesn't overlap adjacent text */
+    transition-duration: 0.3s, 0.3s;
+    transition-timing-function: ease, ease;
+}
+
+a:active {
+    color: var(--links-active-font-color);
+}
+
+footer a {
+  transition: transform 0.3s ease;
+}
+
+footer a:hover {
+    transform: scale(1.08);
+    /* making slightly bigger; no adjacent text in footer to overlap */
+    transition-duration: 0.3s, 0.3s;
+    transition-timing-function: ease, ease;
 }
