@@ -26,7 +26,7 @@ done 10. General sibling combinator */
 
     --gradient-one-three-colours: #f5f3cf;
     --gradient-two-four-colours: #f5f2bf;
-    
+
     /* font colours */
 
     --h1-h2-h3-font-color: #1a2516ce;
@@ -48,7 +48,7 @@ done 10. General sibling combinator */
 
     /* links */
 
-    --links-unvisted-font-color: #675a41;
+    --links-unvisited-font-color: #675a41;
     --links-visted-font-color: #088145;
     --links-hover-font-color: #eda520;
     --links-active-font-color: #94af56;
@@ -85,7 +85,6 @@ header abbr {
 /* body */
 
 body {
-    background-color: var(--page-background-colour);
     height: 100vh;
     background: linear-gradient(45deg, var(--gradient-one-three-colours), var(--gradient-two-four-colours), var(--gradient-one-three-colours), var(--gradient-two-four-colours));
 }
@@ -165,7 +164,7 @@ h3 {
 #zen-requirements {
     flex-grow: 1;
     flex-shrink: 1;
-    flex-basis: 80%
+    flex-basis: 80%;
 }
 
 #zen-explanation,
@@ -255,11 +254,14 @@ footer {
 
 a {
     display: inline-block;
+    transition-property: transform, color;
+    transition-duration: 0.3s;
+    transition-timing-function: ease;
 }
 
 a:link {
     /* 5. Pseudo-class selector: */
-    color: var(--links-unvisted-font-color);
+    color: var(--links-unvisited-font-color);
 }
 
 a:visited {
@@ -270,8 +272,6 @@ a:hover {
     color: var(--links-hover-font-color);
     transform: scale(0.98);
     /* making slightly smaller so it doesn't overlap adjacent text */
-    transition-duration: 0.3s, 0.3s;
-    transition-timing-function: ease, ease;
 }
 
 a:active {
@@ -279,12 +279,56 @@ a:active {
 }
 
 footer a {
-  transition: transform 0.3s ease;
+    transition-property: transform;
+    transition-duration: 0.3s;
+    transition-timing-function: ease;
 }
 
 footer a:hover {
     transform: scale(1.08);
     /* making slightly bigger; no adjacent text in footer to overlap */
-    transition-duration: 0.3s, 0.3s;
-    transition-timing-function: ease, ease;
+}
+
+
+/* media queries */
+
+@media (max-width: 992px) {
+    .page-wrapper {
+        flex-direction: column;
+        border: 1px solid orange;
+    }
+
+    #zen-supporting {
+        flex-direction: column;
+        margin: 2rem;
+    }
+
+    .sidebar {
+        text-align: center;
+        margin-top: 0rem;
+        margin-bottom: 5rem;
+        width: 60%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    [role="banner"] {
+        justify-content: center;
+        padding-left: 0;
+    }
+
+    #zen-preamble {
+        margin-bottom: 0rem;
+    }
+}
+
+@media only screen and (min-width: 993px) and (max-width: 1200px) {
+    #zen-supporting {
+        flex-direction: column;
+        margin-bottom: 4rem;
+    }
+
+    .sidebar {
+        padding: 3rem;
+    }
 }
