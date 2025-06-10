@@ -1,6 +1,6 @@
 Assignment 1 for COMP 1054 (Summer 2025).
 
-- Credits - 
+Credit:
 
 index.html code acquired from: https://github.com/suwebdev/wats1010-css-zen-garden/blob/master/index.html
 
