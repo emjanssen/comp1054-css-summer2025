@@ -2,41 +2,77 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+} /* universal reset; I've also added a normalize.css file */
+
+:root {
+    --body-font-family: Montserrat, sans-serif;
 }
 
 body {
     /* font-family should be'Montserrat', sans-serif */ 
+    font-family: var(--body-font-family);
 }
 
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    /* position nav at top of page: */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
 }
 
 .logo {
     font-weight: 800;
     font-size: 1.5rem;
     color: #222;
+    margin-left: 5rem;
+    /*add space around the logo */
+    margin-top: 1rem;
 }
 
 nav ul {
     display: flex;
     gap: 1.5rem;
     list-style: none;
+    margin-right: 2.5rem;
+    /*slight gap to right of nav links */
 }
 
+nav a { /* colour for unvisited links */
+    color: black;
+}
+
+nav li {
+    /* spacing for links */
+    margin: 1rem;
+}
 
 header {
+    margin-top: 5rem;
+    /*padding so there's enough space between header and nav*/
     height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    text-align: center;
+
+    /*colour, size, and centering for font*/
+    color: #ffffff;
+    font-size: 2.75rem;
+    text-align: left;
+    
+    /*add background image that fills header container */
+    background-image: url(assets/campaign-creators-iEiUITs149M-unsplash.jpg);
+    background-size: cover;
 }
 
-header h1 {}
+header h1 {
+    margin-left: 5rem;
+    /*bit of space between h1 and left edge of page*/
+}
 
 header p {}
 
