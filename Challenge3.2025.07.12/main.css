@@ -15,6 +15,7 @@ h2 {
 
 /* Level 1 – Use Flexbox to space items evenly in a row - done */
 .level1 .container {
+  /* space the items evenly */
   display: flex;
   justify-content: space-evenly;
 }
@@ -31,6 +32,7 @@ h2 {
   height: 200px;
   background: #eee;
   display: flex;
+  /* set flex direction to veritcal and center halfway between top and bottom */
   flex-direction: column;
   justify-content: center;
 }
@@ -44,6 +46,7 @@ h2 {
 /* Level 3 – Make boxes wrap responsively - done */
 .level3 .wrap-container {
   display: flex;
+  /* add wrap value */
   flex-wrap: wrap;
   gap: 10px;
   background: #f4f4f4;
@@ -60,10 +63,12 @@ h2 {
   justify-content: center;
 }
 
-/* Level 4 – Flex-grow navigation bar - Goal: Make one .nav-item (with the .big class) grow to take up extra space in the navigation bar. */
+/* Level 4 – Flex-grow navigation bar - Goal: Make one .nav-item 
+(with the .big class) grow to take up extra space in the navigation bar. - done */
 .level4 .nav-bar {
   background: #333;
   padding: 10px;
+  display: flex;
 }
 
 .level4 .nav-item {
@@ -72,7 +77,14 @@ h2 {
   text-align: center;
 }
 
-.level4 .big {}
+.level4 .big {
+  /* allows items to grow and take up extra space in the container */
+  flex-grow: 1;
+  /* allows the item to shrink when there's not enough space */
+  flex-shrink: 1;
+  /* distribute all available space */
+  flex-basis: 0%;
+}
 
 /* Level 5 – Full page layout using flexbox 
   Goal: Use Flexbox to build a full-page layout.
