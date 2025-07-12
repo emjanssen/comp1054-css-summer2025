@@ -13,8 +13,11 @@ h2 {
   margin-bottom: 40px;
 }
 
-/* Level 1 – Use Flexbox to space items evenly in a row */
-.level1 .container {}
+/* Level 1 – Use Flexbox to space items evenly in a row - done */
+.level1 .container {
+  display: flex;
+  justify-content: space-evenly;
+}
 
 .level1 .box {
   width: 60px;
@@ -23,10 +26,13 @@ h2 {
   color: #fff;
 }
 
-/* Level 2 – Center one item in the middle of the container */
+/* Level 2 – Center one item in the middle of the container - done */
 .level2 .center-container {
   height: 200px;
   background: #eee;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .level2 .center-box {
@@ -35,8 +41,10 @@ h2 {
   color: #fff;
 }
 
-/* Level 3 – Make boxes wrap responsively */
+/* Level 3 – Make boxes wrap responsively - done */
 .level3 .wrap-container {
+  display: flex;
+  flex-wrap: wrap;
   gap: 10px;
   background: #f4f4f4;
   padding: 20px;
