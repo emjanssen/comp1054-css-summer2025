@@ -87,7 +87,7 @@ h2 {
 }
 
 /* Level 5 – Full page layout using flexbox 
-  Goal: Use Flexbox to build a full-page layout.
+  Goal: Use Flexbox to build a full-page layout. - done
   
 Desktop Layout : 
   -----------------------------------------
@@ -122,22 +122,43 @@ Mobile Layout :
   padding: 10px;
 }
 
-.level5 .main {}
+.level5 .main {
+  display: flex;
+  justify-content: space-around;
+}
 
 .level5 .sidebar,
 .level5 .ads {
   background: #ddd;
   padding: 10px;
   width: 150px;
+  
+  /* flex grow, shrink, and basis to ensure .sidebar and .ads take up available extra space */
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 1;
+  /* move text to center for better layout visiblity */
+  text-align: center;
 }
 
 .level5 .content {
   padding: 10px;
   background: #eee;
+  
+  /* flex grow, shrink, and basis to ensure .content takes up available extra space */
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 1;
+  /* move text to center for better layout visiblity */
+  text-align: center;
 }
 
 @media (max-width: 768px) {
-  .level5 .main {}
+  .level5 .main {
+    /* set flex to column so .sidebar, .ads, and .content stack */
+    display: flex;
+    flex-direction: column;
+  }
 
   .level5 .sidebar,
   .level5 .ads {
