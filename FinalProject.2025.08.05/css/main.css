@@ -1,4 +1,4 @@
-/* Universal Reset */
+/* - - Universal Reset - - */
 
 * {
     margin: 0;
@@ -6,7 +6,7 @@
     box-sizing: border-box;
 }
 
-/* Variables */
+/* - - Variables - - */
 
 :root {
 
@@ -28,7 +28,7 @@
     --header-title-font-size: 2.25em;
 }
 
-/**/
+/* - - Body - - */
 
 body {
     background: var(--background-body);
@@ -52,6 +52,8 @@ body {
     gap: 1rem;
 }
 
+/* - - Header - - */
+
 .header {
     background: var(--background-header);
     grid-area: header;
@@ -65,7 +67,27 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
 }
+
+#header-logo {
+    flex: 1;
+}
+
+#header-title {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    pointer-events: none;
+}
+
+#header-nav {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* Header: Navigation */
 
 #header-navigation-ul {
     display: flex;
@@ -74,20 +96,58 @@ body {
 
 #header-navigation-ul li {
     list-style: none;
+    font-family: cardo;
+    font-size: 1.25em;
 }
 
-#img-logo {
-    max-height: 3rem;
-    width: auto;
-    border-radius: 30px;
-    color: #2a2a2a;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.07);
+#header-navigation-ul li a {
+    text-decoration: none;
+    display: inline-block;
+    transition-property: transform;
+    transition-duration: 0.3s;
+    transition-timing-function: ease;
 }
+
+a:link {
+    color: var(--links-unvisited-font-color);
+}
+
+a:visited {
+    color: var(--links-visted-font-color);
+}
+
+a:hover {
+    color: var(--links-hover-font-color);
+    transform: scale(1.08);
+}
+
+a:active {
+    color: var(--links-active-font-color);
+}
+
+#li-item-2 {
+    padding-right: 2.5em;
+    padding-left: 1.5em;
+}
+
+/* Header: Logo */
+
+#img-logo {
+    max-height: 5em;
+    width: auto;
+    margin: .25em;
+    margin-left: .4em;
+    
+}
+
+/* Header: Title */
 
 #header-title h1 {
     font-size: var(--header-title-font-size);
     color: var(--header-title-font-color);
 }
+
+/* - - Sidebar - - */
 
 .sidebar {
     background: var(--background-sidebar);
@@ -98,6 +158,8 @@ body {
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.07);
 }
 
+/* - - Main - - */
+
 .main {
     padding: 1em;
     background: var(--background-main);
@@ -105,6 +167,8 @@ body {
     border-radius: 10px;
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
 }
+
+/* - - Footer - - */
 
 .footer {
     background: var(--background-footer);
@@ -115,6 +179,8 @@ body {
     box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.06);
 }
 
+/* - - Media Queries - - */
+
 /* under 600px, stack items vertically */
 @media (max-width: 600px) {
     .grid-container {
@@ -124,5 +190,27 @@ body {
             "main"
             "sidebar"
             "footer";
+    }
+
+    #header-title h1 {
+        font-size: 1.75em;
+    }
+
+    #header-navigation-ul li a {
+        font-size: .9em;
+    }
+}
+
+@media (max-width: 750px) {
+    #header-navigation-ul {
+        flex-direction: column;
+        gap: 0;
+        text-align: center;
+        margin-right: 1.5em;
+    }
+
+    #li-item-2 {
+        padding-right: 0;
+        padding-left: 0;
     }
 }
