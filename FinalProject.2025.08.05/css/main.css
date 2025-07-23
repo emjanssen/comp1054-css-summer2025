@@ -1,6 +1,20 @@
-/* Font Imports */
+/* Externally Hosted Font */
 
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap');
+
+/* Locally Hosted Font */
+
+@font-face {
+  font-family: "Savate", sans-serif;
+  src: url('fonts/Savate-VariableFont_wght.ttf') format('truetype');
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Savate", sans-serif;
+  src: url('fonts/Savate-Italic-VariableFont_wght.ttf') format('truetype');
+  font-style: italic;
+}
 
 /* Universal Reset */
 
@@ -25,6 +39,10 @@
     --body-font-family: "Merriweather", serif;
     --body-font-weight: 400;
     --body-font-style: normal;
+
+    --header-font-family: "Savate", serif;
+    --header-font-weight: 400;
+    --header-font-style: normal;
 }
 
 /**/
@@ -57,6 +75,10 @@ body {
     grid-area: header;
     border-radius: 10px;
     box-shadow: 0 3px 8px rgba(0, 0, 0, 0.10);
+
+    font-family: var(--header-font-family);
+    font-weight: var(--header-font-weight);
+    font-style: var(--header-font-style);
 }
 
 .sidebar {
@@ -85,6 +107,7 @@ body {
     box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.06);
 }
 
+/* under 600px, stack items vertically */
 @media (max-width: 600px) {
     .grid-container {
         grid-template-columns: 1fr;
