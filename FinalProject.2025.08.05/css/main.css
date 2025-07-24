@@ -22,10 +22,16 @@
     --body-font-weight: 400;
     --body-font-style: normal;
 
-    --header-font-family: "Playfair Display";
+    --header-font-family: "Raleway";
     --header-font-weight: 400;
     --header-font-style: normal;
     --header-title-font-size: 2.25em;
+
+    --header-links-font-family: "Cardo";
+    --links-unvisited-font-color: black;
+    --links-visted-font-color: rgb(182, 111, 221);
+    --links-hover-font-color: rgb(156, 154, 171);
+    --links-active-font-color: rgb(187, 183, 222);    
 }
 
 /* - - Body - - */
@@ -106,6 +112,7 @@ body {
     transition-property: transform;
     transition-duration: 0.3s;
     transition-timing-function: ease;
+    font-family: var(--header-links-font-family);
 }
 
 a:link {
