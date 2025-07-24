@@ -19,7 +19,7 @@
         <header class="header">
 
             <div id="header-logo">
-                <img id="img-logo" src="css/img/headerLogo.png">
+                <img id="img-logo" src="css/img/headerLogo.png" alt="Page logo. It is an image of a flower.">
             </div>
 
             <div id="header-title">
@@ -28,48 +28,58 @@
 
             <nav id="header-nav">
                 <ul id="header-navigation-ul">
-                    <li id="li-item-1"><a href="index.html">Home</a></li>
-                    <!-- contact link doesn't actually going anywhere as this project is only meant to be one page -->
-                    <li id="li-item-2"><a href="index.html">Contact</a></li>
+                    <li id="li-item-1"><a href="https://www.linkedin.com/in/elizabeth-janssen-a6760561/">LinkedIn</a>
+                    </li>
+                    <li id="li-item-2"><a href="https://github.com/emjanssen">GitHub</a></li>
                 </ul>
             </nav>
 
         </header>
 
         <aside class="sidebar">
+
             <div id="sidebar-item-1">
-                <h2>~ About Me ~</h1>
+                <h2>~ About Me ~</h2>
             </div>
 
-            <div id="sidebar-item-2">
-                <p>Computer Programming Student with a demonstrated history of
-                    transferable skills.</p>
-                <p>Currently searching for a challenging and fulfilling
-                    opportunity to utilize existing skills, develop new competencies, and
-                    contribute to the achievement of purposeful and impactful outcomes.</p>
-            </div>
+            <div id="sidebar-container-item-2-and-3">
 
-            <div id="sidebar-item-3">
-                <h3>// - - - Key Skills - - - //</h3>
+                <div id="sidebar-item-2">
+                    <p>Computer Programming Student with a demonstrated history of
+                        transferable skills.</p>
+                    <p>Currently searching for a challenging and fulfilling
+                        opportunity to utilize existing skills, develop new competencies, and
+                        contribute to the achievement of purposeful and impactful outcomes.</p>
+                </div>
+
+                <div id="sidebar-item-3">
+                    <img id="img-profile-pic" src="css/img/asideProfilePic.jpg" alt="Elizabeth's profile picture.">
+                </div>
+
             </div>
             <div id="sidebar-item-4">
+                <h3>// - - - Key Skills - - - //</h3>
+            </div>
+
+
+
+            <div id="sidebar-item-5">
                 <ul id="skills-list-ul">
 
-                    <li>My studies at Georgian have comprised HTML, CSS,
-                        Javascript, C#, Arduino, Python, PHP, SQL, and Java.</li>
+                    <li>My studies at Georgian have included HTML, CSS,
+                        JavaScript, C#, Arduino, Python, PHP, SQL, and Java.</li>
 
-                    <li>I am familiar with Intellij IDEA, PhP
-                        Storm, Visual Studio, Visual Studio
+                    <li>I am familiar with IntelliJ IDEA, PhpStorm, Visual Studio, Visual Studio
                         Code, IDLE, GitHub Desktop, GitHub
                         Pages, MySQL Workbench, and FileZilla.</li>
                 </ul>
             </div>
 
-            <div id="sidebar-item-5">
+            <div id="sidebar-item-6">
                 <h3># - - - Education - - - #</h3>
             </div>
 
-            <div id="sidebar-item-6">
+            <div id="sidebar-item-7">
                 <p>In addition to my current Computer Programming studies at Georgian College, I've completed a Project
                     Management Certificate at Simon Fraser University, and a Bachelor's Degree in Global Development
                     from
@@ -79,7 +89,62 @@
         </aside>
 
         <main class="main">
-            Main
+            <div id="main-grid-container">
+
+                <div id="contact-column">
+
+                    <section id="section-contact-form">
+                        <!-- no  action="" because this is not actually a functional form -->
+
+                        <form method="post" id="form-contact-form">
+                            <h3 id="form-title">Contact Me</h3>
+
+                            <label for="firstName">First Name:</label>
+                            <input type="text" id="firstName" name="firstName"
+                                placeholder="Please enter your first name.">
+
+                            <label for="lastName">Last Name:</label>
+                            <input type="text" id="lastName" name="lastName" placeholder="Please enter your last name.">
+
+                            <label for="emailAddress">Email Address:</label>
+                            <input type="text" id="emailAddress" name="emailAddress"
+                                placeholder="Please enter your email address.">
+
+                            <label for="phoneNumber">Phone Number:</label>
+                            <input type="text" id="phoneNumber" name="phoneNumber"
+                                placeholder="Please enter your phone numer.">
+
+                            <input type="submit" name="submit" value="Submit">
+                        </form>
+
+                    </section>
+
+                </div>
+
+                <div id="projects-column">
+
+                    <div id="projects-title">
+                        <h2>Project Portfolio</h2>
+                    </div>
+
+                    <div id="project-one">
+                        <h3>Tinkercad Video Game: Arduino</h3>
+                    </div>
+
+                    <div id="project-two">
+                        <h3>Employee Hours Website: PHP</h3>
+                    </div>
+
+                    <div id="project-three">
+                        <h3>Zen Garden Design: CSS</h3>
+                    </div>
+
+                    <div id="project-four">
+                        <h3>Automation Application: Python</h3>
+                    </div>
+                </div>
+
+            </div>
         </main>
 
         <footer class="footer">
