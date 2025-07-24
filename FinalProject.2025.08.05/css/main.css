@@ -29,7 +29,7 @@
 
     --header-links-font-family: "Cardo";
     --links-unvisited-font-color: black;
-    --links-visted-font-color: rgb(182, 111, 221);
+    --links-visted-font-color: rgb(126, 71, 156);
     --links-hover-font-color: rgb(156, 154, 171);
     --links-active-font-color: rgb(187, 183, 222);    
 }
@@ -56,6 +56,10 @@ body {
         "sidebar main"
         "footer footer";
     gap: 1rem;
+}
+
+h2 {
+    font-family: "Playfair Display";
 }
 
 /* - - Header - - */
@@ -95,9 +99,13 @@ body {
 
 /* Header: Navigation */
 
+#header-nav {
+    margin-right: 4.5em;
+}
+
 #header-navigation-ul {
     display: flex;
-    gap: 1.25rem;
+    gap: 4em;
 }
 
 #header-navigation-ul li {
@@ -132,10 +140,6 @@ a:active {
     color: var(--links-active-font-color);
 }
 
-#li-item-2 {
-    padding-right: 2.5em;
-    padding-left: 1.5em;
-}
 
 /* Header: Logo */
 
@@ -144,7 +148,6 @@ a:active {
     width: auto;
     margin: .25em;
     margin-left: .4em;
-    
 }
 
 /* Header: Title */
@@ -163,6 +166,37 @@ a:active {
     border-radius: 10px;
     color: #2a2a2a;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.07);
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+#sidebar-item-1,    /* "About Me" */
+#sidebar-item-2,    /* Profile */
+#sidebar-item-3,    /* "Key Skills" */
+#sidebar-item-4,    /* Skills */
+#sidebar-item-5,    /* "Education" */
+#sidebar-item-6     /* Education */
+{
+    text-align: center;
+}
+
+#sidebar-item-2 p,
+#sidebar-item-4 ul li {
+    padding: .5rem;
+}
+
+#sidebar-item-3,
+#sidebar-item-6 {
+    margin-top: .3em;
+}
+
+#sidebar-item-4 ul li {
+    list-style: none;
+}
+
+#sidebar-item-6 {
+    font-size: .95em;
 }
 
 /* - - Main - - */
@@ -205,19 +239,19 @@ a:active {
 
     #header-navigation-ul li a {
         font-size: .9em;
+        margin: .25em;
     }
+
+    #header-nav {
+    margin-right: .05em;
+}
 }
 
-@media (max-width: 750px) {
+@media (max-width: 800px) {
     #header-navigation-ul {
         flex-direction: column;
         gap: 0;
         text-align: center;
         margin-right: 1.5em;
-    }
-
-    #li-item-2 {
-        padding-right: 0;
-        padding-left: 0;
     }
 }
