@@ -81,10 +81,6 @@ h2 {
     font-family: "Playfair Display";
 }
 
-img {
-    max-width: 100%;
-    height: auto;
-}
 
 /* - - - Header - - - */
 
@@ -326,18 +322,15 @@ a:active {
 }
 
 #projects-column img {
-    max-height: 10em;
+    max-height: 15em;
     width: auto;
+    max-width: 100%;
 }
 
 #projects-column h3 {
     /* getting side-scrolling without this */
     word-break: break-word;
 }
-
-/* */
-
-
 
 /* - - - Footer - - - */
 
