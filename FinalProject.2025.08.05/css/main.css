@@ -4,6 +4,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    /* for debug if I get horizontal scrolling 
+    outline: 1px solid red;*/
 }
 
 /* - - - Variables - - - */
@@ -46,6 +48,9 @@ body {
     font-family: var(--body-font-family);
     font-weight: var(--body-font-weight);
     font-style: var(--body-font-style);
+
+    /* for debug if I get horizontal scrolling
+    *overflow-x: hidden; */
 }
 
 .grid-container {
@@ -74,6 +79,11 @@ body {
 
 h2 {
     font-family: "Playfair Display";
+}
+
+img {
+    max-width: 100%;
+    height: auto;
 }
 
 /* - - - Header - - - */
@@ -267,11 +277,10 @@ a:active {
     padding: 0.5em;
     border: 1px solid #ccc;
     border-radius: 5px;
-    width: 100%;
 }
 
 #form-contact-form input[type="submit"] {
-    width: 30%;
+    max-width: 30%;
 }
 
 /* Projects Column */
@@ -304,9 +313,8 @@ a:active {
         "projects-title projects-title"
         "project-one project-two"
         "project-three project-four";
-    gap: 2em;
     text-align: center;
-    margin: 1em;
+    gap: 1rem;
 }
 
 #projects-column a {
@@ -320,7 +328,11 @@ a:active {
 #projects-column img {
     max-height: 10em;
     width: auto;
-    margin: 2em;
+}
+
+#projects-column h3 {
+    /* getting side-scrolling without this */
+    word-break: break-word;
 }
 
 /* */
@@ -373,7 +385,6 @@ a:active {
         text-align: center;
         margin-right: 1.5em;
     }
-
 }
 
 @media (max-width: 1500px) {
