@@ -309,6 +309,20 @@ a:active {
     margin: 1em;
 }
 
+#projects-column a {
+    text-decoration: none;
+    display: inline-block;
+    transition-property: transform;
+    transition-duration: 0.3s;
+    transition-timing-function: ease;
+}
+
+#projects-column img {
+    max-height: 10em;
+    width: auto;
+    margin: 2em;
+}
+
 /* */
 
 
