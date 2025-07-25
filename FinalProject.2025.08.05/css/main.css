@@ -81,7 +81,6 @@ h2 {
     font-family: "Playfair Display";
 }
 
-
 /* - - - Header - - - */
 
 .header {
@@ -265,6 +264,10 @@ a:active {
     text-align: center;
 }
 
+#form-contact-form * {
+    max-width: 100%;
+}
+
 #form-contact-form input[type="text"],
 #form-contact-form input[type="submit"] {
     /* top and bottom margin of 0.5em */
@@ -277,6 +280,11 @@ a:active {
 
 #form-contact-form input[type="submit"] {
     max-width: 30%;
+}
+
+#contact-column p {
+    word-break: break-word;
+    padding: 1em;
 }
 
 /* Projects Column */
@@ -332,6 +340,24 @@ a:active {
     word-break: break-word;
 }
 
+#projects-column p {
+    word-break: break-word;
+    padding: 1em;
+}
+
+.project-card {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    padding: 1.5em;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
 /* - - - Footer - - - */
 
 .footer {
@@ -356,6 +382,13 @@ a:active {
             "footer";
     }
 
+    #main-grid-container {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "projects-column"
+            "contact-column"
+    }
+
     #header-title h1 {
         font-size: 1.75em;
     }
@@ -368,7 +401,6 @@ a:active {
     #header-nav {
         margin-right: .05em;
     }
-
 }
 
 @media (max-width: 800px) {
@@ -378,10 +410,67 @@ a:active {
         text-align: center;
         margin-right: 1.5em;
     }
+
+        #projects-column {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "projects-title"
+            "project-one"
+            "project-two"
+            "project-three"
+            "project-four"
+        }
+    }
+
+@media (max-width: 1300px) {
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: auto 1fr auto;
+
+    grid-template-areas:
+        "header header"
+        "sidebar main"
+        "footer footer";
+    gap: 1rem;
+}
+
+    .grid-container {
+        display: grid;
+        grid-template-columns: 2fr 4fr;
+        grid-template-rows: auto 1fr auto;
+
+        grid-template-areas:
+            "header header"
+            "sidebar main"
+            "footer footer";
+        gap: 1rem;
+    }
 }
 
 @media (max-width: 1500px) {
     #sidebar-container-item-2-and-3 {
         flex-direction: column;
+    }
+
+    .grid-container {
+    display: grid;
+    grid-template-columns: 2fr 4fr;
+    grid-template-rows: auto 1fr auto;
+
+    grid-template-areas:
+        "header header"
+        "sidebar main"
+        "footer footer";
+    gap: 1rem;
+}
+
+        #main-grid-container {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "projects-column"
+            "contact-column"
     }
 }

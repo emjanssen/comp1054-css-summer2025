@@ -61,19 +61,3 @@
     font-weight: 400;
     font-style: italic;
 }
-
-/* Savate */
-
-@font-face {
-    font-family: "Savate";
-    src: url('fonts/Savate/Savate-VariableFont_wght.ttf') format('truetype');
-    font-weight: 400;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: "Savate";
-    src: url('fonts/Savate/Savate-Italic-VariableFont_wght.ttf') format('truetype');
-    font-weight: 400;
-    font-style: italic;
-}
