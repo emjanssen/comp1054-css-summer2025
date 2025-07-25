@@ -39,6 +39,7 @@
 
 /* - - - Body - - - */
 
+
 body {
     background: var(--background-body);
     background-repeat: no-repeat;
@@ -356,6 +357,7 @@ a:active {
 .project-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+    background: linear-gradient(135deg, #fdfdfd, #f1f1f1);
 }
 
 /* - - - Footer - - - */
