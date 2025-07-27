@@ -16,6 +16,10 @@ h1 {
     margin: 0;
 }
 
+ul {
+    list-style: none;
+}
+
 /* - - - Variables - - - */
 
 :root {
@@ -51,7 +55,6 @@ h1 {
 /* - - - Body - - - */
 
 #body_container_grid {
-
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: auto auto auto;
@@ -75,6 +78,51 @@ h1 {
 
 /* - - - Header - - - */
 
+#header-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    grid-template-areas:
+        "header-hidden"
+        "header-visible";
+}
+
+#header-visible {
+    grid-area: header-visible;
+    display: flex;
+    justify-content: space-between;
+}
+
+#header-index {
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+#visible-one {
+    display: flex;
+}
+
+#header-hidden {
+    grid-area: header-hidden;
+}
+
+#header-index {
+    padding-left: 20rem;
+    padding-right: 20rem;
+}
+
+#visible-one img {
+    max-height: 2em;
+}
+
+#header-hidden-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+        "header-hidden-col-one header-hidden-col-two";
+}
+
 /* - - - Main - - - */
 
 #main_container_grid {
@@ -85,6 +133,8 @@ h1 {
         "header"
         "main"
         "footer";
+    padding-left: 20rem;
+    padding-right: 20rem;
 }
 
 #box-one-one {
@@ -97,6 +147,16 @@ h1 {
 
 /* Main Box One */
 
+#main-box-one {
+    text-align: center;
+}
+
+#box-one-two {
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+}
+
 /* Main Box Two */
 
 #main-box-two-grid {
@@ -107,13 +167,36 @@ h1 {
         "thumbnail_one thumbnail_two thumbnail_three"
         "thumbnail_four thumbnail_five thumbnail_six"
         "thumbnail_seven thumbnail_eight thumbnail_nine";
+    gap: 2em;
 }
 
-/* - - - Header - - - */
-
-#visible-one img {
-    max-height: 2em;
+.thumbnail {
+    text-align: center;
 }
+
+.thumbnail-background {
+    padding-bottom: 10rem;
+}
+
+.thumbnail-lower-ribbon {
+    display: flex;
+    justify-content: space-between;
+}
+
+.thumbnail-lower-ribbon-one {
+    display: flex;
+}
+
+/* - - - Footer - - - */
+
+#footer-index {
+    padding-left: 20rem;
+    padding-right: 20rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+
 
 /* - - - Media Queries - - - */
 
