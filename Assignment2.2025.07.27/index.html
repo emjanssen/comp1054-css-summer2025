@@ -8,22 +8,21 @@
     <meta name="keywords" content="css, grid, flexbox, bootstrap, design">
     <meta name="description" content="Recreate a bootstrap layout without using bootstrap.">
     <link rel="stylesheet" media="screen" href="css/main.css">
-    <link rel="stylesheet" media="screen" href="css/fonts.css">
     <link rel="stylesheet" media="screen" href="css/normalize.css">
     <title>Album Example for Bootstrap</title>
 </head>
 
 <body>
 
-    <body_container_grid>
-        <header>
+    <div id="body_container_grid">
+        <header id="header-index">
             <div id="header-grid">
                 <div id="header-visible">
                     <div id="visible-one">
-                        <img src="" alt="camera icon">
+                        <img src="css/img/cameraPlaceholder.png" alt="camera icon">
                         <h2>Album</h2>
                     </div>
-                    <div id="visible-one">
+                    <div id="visible-two">
                         <div>dropdown menu</div>
                     </div>
                 </div>
@@ -41,8 +40,8 @@
                 </div>
             </div>
         </header>
-        <main_container_grid>
-            <main-box-one>
+        <main id="main_container_grid">
+            <div id="main-box-one">
                 <div id="box-one-one">
                     <h1>
                         Album example
@@ -51,9 +50,6 @@
                         short and sweet, but not too short so folks don't simply skip over it entirely.</p>
                 </div>
                 <div id="box-one-two">
-
-                </div>
-                <div id="box-one-three">
                     <div id="main-call-to-action">
                         <p>Main call to action</p>
                     </div>
@@ -61,14 +57,16 @@
                         <p>Secondary call to action</p>
                     </div>
                 </div>
-            </main-box-one>
-            <main-box-two>
+            </div>
+
+            <div id="main-box-two-grid">
                 <div id="thumbnail_one" class="thumbnail">
                     <div class="thumbnail-background">
                         <h2>Thumbnail</h2>
                     </div>
                     <div class="thumbnail-paragraph">
-                        <p>This is a wider card with supporting text below as a natural lead-in to additional content.
+                        <p>This is a wider card with supporting text below as a natural lead-in to additional
+                            content.
                             This content is a little bit longer.</p>
                     </div>
                     <div class="thumbnail-lower-ribbon">
@@ -83,7 +81,8 @@
                         <h2>Thumbnail</h2>
                     </div>
                     <div class="thumbnail-paragraph">
-                        <p>This is a wider card with supporting text below as a natural lead-in to additional content.
+                        <p>This is a wider card with supporting text below as a natural lead-in to additional
+                            content.
                             This content is a little bit longer.</p>
                     </div>
                     <div class="thumbnail-lower-ribbon">
@@ -98,7 +97,8 @@
                         <h2>Thumbnail</h2>
                     </div>
                     <div class="thumbnail-paragraph">
-                        <p>This is a wider card with supporting text below as a natural lead-in to additional content.
+                        <p>This is a wider card with supporting text below as a natural lead-in to additional
+                            content.
                             This content is a little bit longer.</p>
                     </div>
                     <div class="thumbnail-lower-ribbon">
@@ -113,7 +113,8 @@
                         <h2>Thumbnail</h2>
                     </div>
                     <div class="thumbnail-paragraph">
-                        <p>This is a wider card with supporting text below as a natural lead-in to additional content.
+                        <p>This is a wider card with supporting text below as a natural lead-in to additional
+                            content.
                             This content is a little bit longer.</p>
                     </div>
                     <div class="thumbnail-lower-ribbon">
@@ -128,7 +129,8 @@
                         <h2>Thumbnail</h2>
                     </div>
                     <div class="thumbnail-paragraph">
-                        <p>This is a wider card with supporting text below as a natural lead-in to additional content.
+                        <p>This is a wider card with supporting text below as a natural lead-in to additional
+                            content.
                             This content is a little bit longer.</p>
                     </div>
                     <div class="thumbnail-lower-ribbon">
@@ -143,7 +145,8 @@
                         <h2>Thumbnail</h2>
                     </div>
                     <div class="thumbnail-paragraph">
-                        <p>This is a wider card with supporting text below as a natural lead-in to additional content.
+                        <p>This is a wider card with supporting text below as a natural lead-in to additional
+                            content.
                             This content is a little bit longer.</p>
                     </div>
                     <div class="thumbnail-lower-ribbon">
@@ -158,7 +161,8 @@
                         <h2>Thumbnail</h2>
                     </div>
                     <div class="thumbnail-paragraph">
-                        <p>This is a wider card with supporting text below as a natural lead-in to additional content.
+                        <p>This is a wider card with supporting text below as a natural lead-in to additional
+                            content.
                             This content is a little bit longer.</p>
                     </div>
                     <div class="thumbnail-lower-ribbon">
@@ -173,7 +177,8 @@
                         <h2>Thumbnail</h2>
                     </div>
                     <div class="thumbnail-paragraph">
-                        <p>This is a wider card with supporting text below as a natural lead-in to additional content.
+                        <p>This is a wider card with supporting text below as a natural lead-in to additional
+                            content.
                             This content is a little bit longer.</p>
                     </div>
                     <div class="thumbnail-lower-ribbon">
@@ -188,7 +193,8 @@
                         <h2>Thumbnail</h2>
                     </div>
                     <div class="thumbnail-paragraph">
-                        <p>This is a wider card with supporting text below as a natural lead-in to additional content.
+                        <p>This is a wider card with supporting text below as a natural lead-in to additional
+                            content.
                             This content is a little bit longer.</p>
                     </div>
                     <div class="thumbnail-lower-ribbon">
@@ -198,21 +204,20 @@
                     </div>
                 </div>
 
-            </main-box-two>
-            </main>
-            <footer>
-                <footer id="box-one">
-                    <p>Album example is © Bootstrap, but please download and customize it for yourself!</p>
-                    <p>New to Bootstrap? Visit the homepage or read our getting started guide.</p>
-                </footer>
+            </div>
+        </main>
+        <footer id="footer-index">
+            <div id="footer-box-one">
+                <p>Album example is © Bootstrap, but please download and customize it for yourself!</p>
+                <p>New to Bootstrap? Visit the homepage or read our getting started guide.</p>
+            </div>
 
-<footer id="box-two">
-                    <p>Back to top</p>
-                </footer>
+            <div id="footer-box-two">
+                <p>Back to top</p>
+            </div>
 
-            </footer>
-    </body_container_grid>
-
+        </footer>
+    </div>
 </body>
 
 </html>

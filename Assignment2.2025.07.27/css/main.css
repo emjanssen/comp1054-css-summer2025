@@ -50,40 +50,74 @@ h1 {
 
 /* - - - Body - - - */
 
-body {
+#body_container_grid {
+
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: auto auto auto;
     grid-template-areas:
-        "header"
-        "main"
-        "footer";
+        "header-index"
+        "main_container_grid"
+        "footer-index";
+}
+
+#header-index {
+    grid-area: header-index;
+}
+
+#main_container_grid {
+    grid-area: main_container_grid;
+}
+
+#footer-index {
+    grid-area: footer-index;
 }
 
 /* - - - Header - - - */
 
 /* - - - Main - - - */
 
-/* Main Box One */
-
-/* Main Box Two */
-
-/* - - - Header - - - */
-
-/* - - - Media Queries - - - */
-
-@media (max-width: 600px) {
-
-/* - - - Body - - - */
-
-body {
+#main_container_grid {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: auto auto auto;
+    grid-template-rows: auto;
     grid-template-areas:
         "header"
         "main"
         "footer";
 }
+
+#box-one-one {
+    grid-area: box-one-one;
+}
+
+#box-one-two {
+    grid-area: box-one-two;
+}
+
+/* Main Box One */
+
+/* Main Box Two */
+
+#main-box-two-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr auto auto;
+    grid-template-areas:
+        "thumbnail_one thumbnail_two thumbnail_three"
+        "thumbnail_four thumbnail_five thumbnail_six"
+        "thumbnail_seven thumbnail_eight thumbnail_nine";
+}
+
+/* - - - Header - - - */
+
+#visible-one img {
+    max-height: 2em;
+}
+
+/* - - - Media Queries - - - */
+
+@media (max-width: 600px) {
+
 
 }
