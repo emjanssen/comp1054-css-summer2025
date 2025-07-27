@@ -1,0 +1,89 @@
+/* - - - Universal - - - */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+h1 {
+    padding: 0;
+    margin: 0;
+}
+
+/* - - - Variables - - - */
+
+:root {
+
+    --body-background-color: #ffffff;
+    --body-font-color: #ffffff;
+
+    --header-background-color: #343a40;
+    --header-font-color: #ffffff;
+
+    --hero-background-color-one: #fff;
+    --hero-font-color-one: #212529;
+
+    --main-background-color-two: #f8f9fa;
+    --main-text-color-two: #212529;
+
+    --card-background-color: #ffffff;
+    --card-text-color: #ffffff;
+
+    --card-thumbnail-background-color: #ffffff;
+    --card-thumbnail-text-color: #ffffff;
+
+    --footer-background-color: #ffffff;
+    --footer-font-color: #ffffff;
+
+    --main-call-to-action-background-color: #007bff;
+    --main-call-to-action-text-color: #fff;
+
+    --secondary-call-to-action-background-color: #6c757d;
+    --secondary-call-to-action-text-color: #fff;
+}
+
+/* - - - Body - - - */
+
+body {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    grid-template-areas:
+        "header"
+        "main"
+        "footer";
+}
+
+/* - - - Header - - - */
+
+/* - - - Main - - - */
+
+/* Main Box One */
+
+/* Main Box Two */
+
+/* - - - Header - - - */
+
+/* - - - Media Queries - - - */
+
+@media (max-width: 600px) {
+
+/* - - - Body - - - */
+
+body {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    grid-template-areas:
+        "header"
+        "main"
+        "footer";
+}
+
+}
