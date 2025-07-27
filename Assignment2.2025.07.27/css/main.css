@@ -24,6 +24,8 @@ ul {
 
 :root {
 
+    /* Colours */
+
     --body-background-color: #ffffff;
     --body-font-color: #ffffff;
 
@@ -39,7 +41,7 @@ ul {
     --card-background-color: #ffffff;
     --card-text-color: #ffffff;
 
-    --card-thumbnail-background-color: #ffffff;
+    --card-thumbnail-background-color: #212529;
     --card-thumbnail-text-color: #ffffff;
 
     --footer-background-color: #ffffff;
@@ -50,9 +52,19 @@ ul {
 
     --secondary-call-to-action-background-color: #6c757d;
     --secondary-call-to-action-text-color: #fff;
+
+    /* Text */
+
+    --body-text-family: BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
 }
 
 /* - - - Body - - - */
+
+body {
+    font-family: var(--body-text-family);
+    font-weight: 400;
+    line-height: 1.5;
+}
 
 #body_container_grid {
     display: grid;
@@ -93,22 +105,12 @@ ul {
     justify-content: space-between;
 }
 
-#header-index {
-    padding-left: 2rem;
-    padding-right: 2rem;
-}
-
 #visible-one {
     display: flex;
 }
 
 #header-hidden {
     grid-area: header-hidden;
-}
-
-#header-index {
-    padding-left: 20rem;
-    padding-right: 20rem;
 }
 
 #visible-one img {
@@ -123,6 +125,14 @@ ul {
         "header-hidden-col-one header-hidden-col-two";
 }
 
+#header-hidden-grid {
+  display: none;
+}
+
+#header-toggle:checked ~ #header-hidden-grid {
+  display: block;
+}
+
 /* - - - Main - - - */
 
 #main_container_grid {
@@ -133,8 +143,6 @@ ul {
         "header"
         "main"
         "footer";
-    padding-left: 20rem;
-    padding-right: 20rem;
 }
 
 #box-one-one {
@@ -174,10 +182,6 @@ ul {
     text-align: center;
 }
 
-.thumbnail-background {
-    padding-bottom: 10rem;
-}
-
 .thumbnail-lower-ribbon {
     display: flex;
     justify-content: space-between;
@@ -185,22 +189,36 @@ ul {
 
 .thumbnail-lower-ribbon-one {
     display: flex;
+    gap: .5em;
 }
 
 /* - - - Footer - - - */
 
 #footer-index {
-    padding-left: 20rem;
-    padding-right: 20rem;
+    margin: 2rem;
     display: flex;
     justify-content: space-between;
 }
 
-
-
 /* - - - Media Queries - - - */
 
-@media (max-width: 600px) {
+@media (max-width: 800px) {
 
+    #main-box-two-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(1fr, 9);
+    grid-template-areas:
+        "thumbnail_one"
+        "thumbnail_two"
+        "thumbnail_three"
+        "thumbnail_four"
+        "thumbnail_five"
+        "thumbnail_six"
+        "thumbnail_seven"
+        "thumbnail_eight"
+        "thumbnail_nine";
+    gap: 2em;
+}
 
 }
