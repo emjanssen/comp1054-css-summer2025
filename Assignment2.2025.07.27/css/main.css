@@ -26,14 +26,12 @@ ul {
 
     /* Colours */
 
-    --body-background-color: #ffffff;
-    --body-font-color: #ffffff;
+    --body-background-color: white;
 
     --header-background-color: #343a40;
     --header-font-color: #ffffff;
 
-    --main-background-color-two: #f8f9fa;
-    --main-text-color-two: #212529;
+    --main-thumbnail-background-color: #f8f9fa;
 
     --card-background-color: #ffffff;
     --card-text-color: #ffffff;
@@ -53,9 +51,18 @@ ul {
 /* - - - Body - - - */
 
 body {
+    background: var(--body-background-color);
     font-family: var(--body-text-family);
     font-weight: 400;
     line-height: 1.5;
+}
+
+#header-grid,
+#main_container_grid,
+#footer-index {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
 }
 
 #body_container_grid {
@@ -68,18 +75,6 @@ body {
         "footer-index";
 }
 
-#header-index {
-    grid-area: header-index;
-}
-
-#main_container_grid {
-    grid-area: main_container_grid;
-}
-
-#footer-index {
-    grid-area: footer-index;
-}
-
 /* - - - Header - - - */
 
 #header-grid {
@@ -89,6 +84,13 @@ body {
     grid-template-areas:
         "header-hidden"
         "header-visible";
+}
+
+#header-index {
+    grid-area: header-index;
+    background: var(--header-background-color);
+    color: var(--header-font-color);
+    padding: 1rem;
 }
 
 #header-visible {
@@ -155,6 +157,10 @@ body {
         "footer";
 }
 
+#main_container_grid {
+    grid-area: main_container_grid;
+}
+
 #box-one-one {
     grid-area: box-one-one;
 }
@@ -167,6 +173,7 @@ body {
 
 #main-box-one {
     text-align: center;
+    padding: 2em;
 }
 
 #box-one-two {
@@ -203,6 +210,11 @@ body {
     gap: 2em;
 }
 
+#main-box-two-grid {
+    background: var(--main-thumbnail-background-color);
+    padding: 2rem;
+}
+
 .thumbnail {
     text-align: center;
 }
@@ -214,7 +226,12 @@ body {
 
 .thumbnail-lower-ribbon-one {
     display: flex;
-    gap: .5em;
+}
+
+.thumbnail-lower-ribbon-one p {
+    padding: .3em;
+    border: 1px solid grey;
+    border-radius: 10%;
 }
 
 /* - - - Footer - - - */
@@ -223,6 +240,10 @@ body {
     margin: 2rem;
     display: flex;
     justify-content: space-between;
+}
+
+#footer-index {
+    grid-area: footer-index;
 }
 
 /* - - - Media Queries - - - */
