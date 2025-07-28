@@ -57,7 +57,6 @@ body {
     line-height: 1.5;
 }
 
-
 #body_container_grid {
     display: grid;
     grid-template-columns: 1fr;
@@ -77,15 +76,12 @@ body {
     grid-template-areas:
         "header-hidden"
         "header-visible";
-    padding-left: 23em;
-    padding-right: 23em;
 }
 
 #header-index {
     grid-area: header-index;
     background: var(--header-background-color);
     color: var(--header-font-color);
-    padding: 1rem;
 }
 
 #header-hidden-col-two li {
@@ -186,14 +182,16 @@ making it roughly the same height and width as in the bootstrap example */
 /* - - - Main - - - */
 
 #main_container_grid {
-    grid-area: main_container_grid;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: auto;
     grid-template-areas:
-        "header"
-        "main"
-        "footer";
+        "main-box-one"
+        "main-box-two";
+}
+
+#main_container_grid {
+    grid-area: main_container_grid;
 }
 
 #box-one-one {
@@ -278,10 +276,17 @@ making it roughly the same height and width as in the bootstrap example */
         "thumbnail_seven thumbnail_eight thumbnail_nine";
     gap: 2em;
     background: var(--main-thumbnail-background-color);
-    padding-left: 25em;
-    padding-right: 25em;
     padding-top: 4em;
     padding-bottom: 4rem;
+   
+}
+
+.thumbnail-background {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    background-color: white;
 }
 
 .thumbnail-paragraph {
@@ -315,8 +320,6 @@ making it roughly the same height and width as in the bootstrap example */
     margin-bottom: 3rem;
     color: grey;
     justify-content: space-between;
-    padding-left: 25em;
-    padding-right: 25em;
 }
 
 #footer-index a {
@@ -343,6 +346,10 @@ making it roughly the same height and width as in the bootstrap example */
             "thumbnail_eight"
             "thumbnail_nine";
         gap: 2em;
+    }
+
+    #main-box-one {
+        max-width: 80%;
     }
 
 }
