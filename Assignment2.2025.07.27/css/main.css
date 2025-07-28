@@ -45,7 +45,9 @@ ul {
 
     /* Text */
 
+    /* code for body font-family pulled from chrome dev tools */
     --body-text-family: BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    /* end of code pulled from dev tools */
 }
 
 /* - - - Body - - - */
@@ -76,6 +78,8 @@ body {
     grid-template-areas:
         "header-hidden"
         "header-visible";
+    padding-left: clamp(2rem, 20vw, 30em);
+    padding-right: clamp(2rem, 20vw, 30em);
 }
 
 #header-index {
@@ -278,7 +282,9 @@ making it roughly the same height and width as in the bootstrap example */
     background: var(--main-thumbnail-background-color);
     padding-top: 4em;
     padding-bottom: 4rem;
-   
+
+    padding-left: clamp(2rem, 20vw, 30em);
+    padding-right: clamp(2rem, 20vw, 30em);
 }
 
 .thumbnail-background {
@@ -319,7 +325,6 @@ making it roughly the same height and width as in the bootstrap example */
     margin-top: 3rem;
     margin-bottom: 3rem;
     color: grey;
-    justify-content: space-between;
 }
 
 #footer-index a {
@@ -327,7 +332,24 @@ making it roughly the same height and width as in the bootstrap example */
     text-decoration: none;
 }
 
+#footer-box-one,
+#footer-box-two {
+    padding-left: clamp(2rem, 20vw, 30em);
+    padding-right: clamp(2rem, 20vw, 30em);
+}
+
 /* - - - Media Queries - - - */
+
+@media (max-width: 1300px) {
+    #main-box-two-grid,
+    #header-grid,
+    #footer-box-one,
+    #footer-box-two {
+        padding-left: clamp(2rem, 5vw, 5em);
+        padding-right: clamp(2rem, 5vw, 5em);
+    }
+}
+
 
 @media (max-width: 800px) {
 
@@ -348,8 +370,12 @@ making it roughly the same height and width as in the bootstrap example */
         gap: 2em;
     }
 
-    #main-box-one {
-        max-width: 80%;
+    #main-box-two-grid,
+    #header-grid,
+    #footer-box-one,
+    #footer-box-two {
+        padding-left: clamp(2rem, 10vw, 10em);
+        padding-right: clamp(2rem, 10vw, 10em);
     }
 
 }
