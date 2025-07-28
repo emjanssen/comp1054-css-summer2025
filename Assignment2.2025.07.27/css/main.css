@@ -57,6 +57,7 @@ body {
     line-height: 1.5;
 }
 
+
 #body_container_grid {
     display: grid;
     grid-template-columns: 1fr;
@@ -85,6 +86,18 @@ body {
     background: var(--header-background-color);
     color: var(--header-font-color);
     padding: 1rem;
+}
+
+#header-hidden-col-two li {
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+    transition: transform 0.1s ease, opacity 0.2s ease;
+}
+
+#header-hidden-col-two li:active {
+    transform: scale(0.96);
+    opacity: 0.6;
 }
 
 #header-visible {
@@ -116,6 +129,17 @@ body {
 
 #header-hidden-col-two {
     grid-area: header-hidden-col-two;
+}
+
+#visible-one {
+    gap: .5em;
+}
+
+/* there is surely a better way to configure this camera svg; for now,
+making it roughly the same height and width as in the bootstrap example */
+#visible-one svg {
+    height: 2.25em;
+    width: 1.5em;
 }
 
 #header-hidden-grid {
@@ -162,6 +186,7 @@ body {
 /* - - - Main - - - */
 
 #main_container_grid {
+    grid-area: main_container_grid;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: auto;
@@ -169,10 +194,6 @@ body {
         "header"
         "main"
         "footer";
-}
-
-#main_container_grid {
-    grid-area: main_container_grid;
 }
 
 #box-one-one {
@@ -196,11 +217,17 @@ body {
     margin-bottom: 3rem;
 }
 
+#box-one-one h1 {
+    background: var(--body-background-color);
+    font-family: var(--body-text-family);
+    font-weight: 400;
+    line-height: 1.5;
+}
+
 #box-one-two {
     display: flex;
     justify-content: center;
     gap: 1em;
-    margin-bottom: 3rem;
 }
 
 #main-call-to-action {
@@ -214,10 +241,26 @@ body {
 #main-call-to-action,
 #secondary-call-to-action {
     color: var(--call-to-action-text-color);
-    padding: .5em;
+    padding: 0.5em;
     border-radius: 7%;
     margin-top: 1rem;
+    cursor: pointer;
+    transition: transform 0.1s ease, opacity 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
 }
+
+#main-call-to-action:hover,
+#secondary-call-to-action:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+}
+
+#main-call-to-action:active,
+#secondary-call-to-action:active {
+    transform: scale(0.96);
+    opacity: 0.6;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
 
 #box-one-text {
     font-size: 1.25rem;
@@ -245,7 +288,7 @@ body {
     text-align: center;
     background: white;
     padding: 1.5em;
-    margin-bottom: 1em;
+    margin-bottom: 2em;
 }
 
 .thumbnail-lower-ribbon {
@@ -274,6 +317,11 @@ body {
     justify-content: space-between;
     padding-left: 25em;
     padding-right: 25em;
+}
+
+#footer-index a {
+    color: rgb(9, 181, 244);
+    text-decoration: none;
 }
 
 /* - - - Media Queries - - - */
