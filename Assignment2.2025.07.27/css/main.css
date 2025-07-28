@@ -108,10 +108,10 @@ body {
 #header-hidden-col-one {
     grid-area: header-hidden-col-one;
     max-width: 85%;
-} 
+}
 
 #header-hidden-col-one p {
-color: grey;
+    color: grey;
 }
 
 #header-hidden-col-two {
@@ -123,19 +123,22 @@ color: grey;
     grid-template-columns: 2fr 1fr;
     grid-template-rows: auto;
     grid-template-areas:
-    "header-hidden-col-one header-hidden-col-two";
+        "header-hidden-col-one header-hidden-col-two";
     gap: 2rem;
     padding: 1em;
     margin-bottom: 2em;
-    
 }
 
 #header-hidden-content {
-    display: none;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.5s ease, opacity 0.5s ease;
 }
 
 #header-toggle:checked~#header-hidden-content {
-    display: block;
+    max-height: 100%;
+    opacity: 1;
 }
 
 /* Hamburger Icon */
@@ -188,7 +191,7 @@ color: grey;
     max-width: 40%;
     display: flex;
     flex-direction: column;
-    /* centers box one content horizonally */ 
+    /* centers box one content horizonally */
     margin: 0 auto;
     margin-bottom: 3rem;
 }
