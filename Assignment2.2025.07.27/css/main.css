@@ -32,30 +32,22 @@ ul {
     --header-background-color: #343a40;
     --header-font-color: #ffffff;
 
-    --hero-background-color-one: #fff;
-    --hero-font-color-one: #212529;
-
     --main-background-color-two: #f8f9fa;
     --main-text-color-two: #212529;
 
     --card-background-color: #ffffff;
     --card-text-color: #ffffff;
 
-    --card-thumbnail-background-color: #212529;
-    --card-thumbnail-text-color: #ffffff;
-
     --footer-background-color: #ffffff;
     --footer-font-color: #ffffff;
 
     --main-call-to-action-background-color: #007bff;
-    --main-call-to-action-text-color: #fff;
-
     --secondary-call-to-action-background-color: #6c757d;
-    --secondary-call-to-action-text-color: #fff;
+    --call-to-action-text-color: white;
 
     /* Text */
 
-    --body-text-family: BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+    --body-text-family: BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
 /* - - - Body - - - */
@@ -126,11 +118,29 @@ body {
 }
 
 #header-hidden-grid {
-  display: none;
+    display: none;
 }
 
-#header-toggle:checked ~ #header-hidden-grid {
-  display: block;
+#header-toggle:checked~#header-hidden-grid {
+    display: block;
+}
+
+/* Hamburger Icon */
+
+#hamburger-icon {
+    display: inline-block;
+    width: 25px;
+    height: 18px;
+    cursor: pointer;
+    position: relative;
+}
+
+#hamburger-icon span {
+    display: block;
+    height: 3px;
+    background-color: black;
+    margin: 4px 0;
+    border-radius: 2px;
 }
 
 /* - - - Main - - - */
@@ -163,6 +173,21 @@ body {
     display: flex;
     justify-content: center;
     gap: 1em;
+}
+
+#main-call-to-action {
+    background: var(--main-call-to-action-background-color);
+}
+
+#secondary-call-to-action {
+    background: var(--secondary-call-to-action-background-color);
+}
+
+#main-call-to-action,
+#secondary-call-to-action {
+    color: var(--call-to-action-text-color);
+    padding: .5em;
+    border-radius: 7%;
 }
 
 /* Main Box Two */
@@ -205,20 +230,20 @@ body {
 @media (max-width: 800px) {
 
     #main-box-two-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(1fr, 9);
-    grid-template-areas:
-        "thumbnail_one"
-        "thumbnail_two"
-        "thumbnail_three"
-        "thumbnail_four"
-        "thumbnail_five"
-        "thumbnail_six"
-        "thumbnail_seven"
-        "thumbnail_eight"
-        "thumbnail_nine";
-    gap: 2em;
-}
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(9, 1fr);
+        grid-template-areas:
+            "thumbnail_one"
+            "thumbnail_two"
+            "thumbnail_three"
+            "thumbnail_four"
+            "thumbnail_five"
+            "thumbnail_six"
+            "thumbnail_seven"
+            "thumbnail_eight"
+            "thumbnail_nine";
+        gap: 2em;
+    }
 
 }
