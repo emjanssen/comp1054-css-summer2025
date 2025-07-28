@@ -14,12 +14,17 @@
 
 <body>
 
+    <!-- for page wide grid -->
     <div id="body_container_grid">
         <header id="header-index">
+            <!-- for header grid -->
             <div id="header-grid">
 
+                <!-- will use checkbox to toggle hidden header content
+                hidden attribute makes the checkmark box hidden from user view -->
                 <input type="checkbox" id="header-toggle" hidden>
 
+                <!-- initially visible header content -->
                 <div id="header-visible">
                     <div id="visible-one">
 
@@ -36,6 +41,8 @@
                     </div>
 
                     <div id="visible-two">
+                        <!-- attempting to create hamburger icon using spans -->
+                        <!-- headder-toggle label activated when header-toggle checkbox is clicked -->
                         <label for="header-toggle" id="hamburger-icon">
                             <span></span>
                             <span></span>
@@ -44,7 +51,9 @@
                     </div>
                 </div>
 
+                <!-- intially hidden header content -->
                 <div id="header-hidden-content">
+                    <!-- header grid -->
                     <div id="header-hidden-grid">
                         <div id="header-hidden-col-one">
                             <h2>About</h2>
@@ -68,6 +77,7 @@
             </div>
         </header>
 
+        <!--overall grid for main; two main boxes, one for call to action area, second box for all the thumbnails -->
         <main id="main_container_grid">
             <div id="main-box-one">
                 <div id="box-one-one">
@@ -88,10 +98,13 @@
                 </div>
             </div>
 
-            <!--thumbnail.svg pulled from dev tools -->
+            <!-- grid for all the thumbnails -->
             <div id="main-box-two-grid">
+                <!-- thumbnail class so we can target all of the thumbnails the same way
+                 three components to thumbnail class: the thumbnail image, then a paragraph, then the lower ribbon (which is split into two boxes) -->
                 <div id="thumbnail_one" class="thumbnail">
                     <div class="thumbnail-background">
+                        <!--thumbnail.svg pulled from dev tools -->
                         <img src="css/img/thumbnail.svg" alt="Thumbnail logo.">
                     </div>
                     <div class="thumbnail-paragraph">
@@ -274,6 +287,7 @@
         </main>
         <footer id="footer-index">
             <div id="footer-box-one">
+                <!--not using grid for footer; going to target with flexbox -->
                 <p>Album example is © Bootstrap, but please download and customize it for yourself!</p>
                 <p>New to Bootstrap? <a href="https://getbootstrap.com/docs/4.0/getting-started/introduction/">Visit the
                         homepage</a> or read our <a
