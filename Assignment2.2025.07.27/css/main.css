@@ -59,6 +59,7 @@ body {
     line-height: 1.5;
 }
 
+/* grid for the entire page: header, main, footer,  */
 #body_container_grid {
     display: grid;
     grid-template-columns: 1fr;
@@ -71,6 +72,8 @@ body {
 
 /* - - - Header - - - */
 
+/* stacking visible and hidden header content
+using clamp for overall page responsiveness; not perfect, will see if I can make it better later */
 #header-grid {
     display: grid;
     grid-template-columns: 1fr;
@@ -88,6 +91,8 @@ body {
     color: var(--header-font-color);
 }
 
+/* make links look like they're clickable even though they don't go anywhere 
+slight transition using transform and opacity, and also using cursor to create a visible mouse pointer */
 #header-hidden-col-two li {
     color: white;
     cursor: pointer;
@@ -95,6 +100,7 @@ body {
     transition: transform 0.1s ease, opacity 0.2s ease;
 }
 
+/* transition when fake links are clicked */
 #header-hidden-col-two li:active {
     transform: scale(0.96);
     opacity: 0.6;
@@ -142,6 +148,7 @@ making it roughly the same height and width as in the bootstrap example */
     width: 1.5em;
 }
 
+/* grid within header just for the initially hidden content; put one column on the left, and one one the right */
 #header-hidden-grid {
     display: grid;
     grid-template-columns: 2fr 1fr;
@@ -153,6 +160,11 @@ making it roughly the same height and width as in the bootstrap example */
     margin-bottom: 2em;
 }
 
+/* to hide content initally
+max height means it's still part of the page, but not visible
+opacity also makes it invisible
+hidden overflower in case anything spills out
+relatively smooth transition; still a bit jerky, could be smoother */
 #header-hidden-content {
     max-height: 0;
     overflow: hidden;
@@ -160,6 +172,8 @@ making it roughly the same height and width as in the bootstrap example */
     transition: max-height 0.5s ease, opacity 0.5s ease;
 }
 
+/* once header-toggled is checked, we make the following edits to our hidden content in the header 
+give it a height of the available space/row; make it visible again with opacity 1*/
 #header-toggle:checked~#header-hidden-content {
     max-height: 100%;
     opacity: 1;
@@ -167,6 +181,11 @@ making it roughly the same height and width as in the bootstrap example */
 
 /* Hamburger Icon */
 
+/* very basic attempt at hamburge icon usings span (just tried to learn this today) 
+inline-block lets the hamburger label be styled like a box; allows for setting of height, width, etc
+cursor to make it look like we have a pointer
+border, colour and sizing edits to make it look somewhat like the bootstrap one
+*/
 #hamburger-icon {
     display: inline-block;
     width: 45px;
@@ -175,6 +194,7 @@ making it roughly the same height and width as in the bootstrap example */
     border-radius: 10px;
 }
 
+/* editing each of the spans; colour and size values to make them look kind of like the hamburger icon */
 #hamburger-icon span {
     display: block;
     background-color: #343a40;
@@ -185,6 +205,7 @@ making it roughly the same height and width as in the bootstrap example */
 
 /* - - - Main - - - */
 
+/* grid for the entire main container; two boxes stacked on top of each other, one for About section, one for all the thumbnails */
 #main_container_grid {
     display: grid;
     grid-template-columns: 1fr;
@@ -210,12 +231,14 @@ making it roughly the same height and width as in the bootstrap example */
 
 #main-box-one {
     padding: 2em;
+    /* move text to center */
     text-align: center;
     max-width: 40%;
     display: flex;
     flex-direction: column;
     /* centers box one content horizonally */
     margin: 0 auto;
+    /* slight margin between the two main boxes */
     margin-bottom: 3rem;
 }
 
@@ -232,6 +255,12 @@ making it roughly the same height and width as in the bootstrap example */
     gap: 1em;
 }
 
+#box-one-text {
+    font-size: 1.25rem;
+}
+
+/* Call to Action buttons */
+
 #main-call-to-action {
     background: var(--main-call-to-action-background-color);
 }
@@ -240,22 +269,29 @@ making it roughly the same height and width as in the bootstrap example */
     background: var(--secondary-call-to-action-background-color);
 }
 
+/* makes them look like they're being clicked, but giving them a box shadow  transition */
 #main-call-to-action,
 #secondary-call-to-action {
     color: var(--call-to-action-text-color);
     padding: 0.5em;
     border-radius: 7%;
     margin-top: 1rem;
+    /* cursor so we have a pointer */
     cursor: pointer;
+    /* ease to determine how transition speeds up/slows down, opacity to animate the fade in/out effect, box shadow for */
     transition: transform 0.1s ease, opacity 0.2s ease, box-shadow 0.3s ease;
+    /* slight box shadow as a base */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
 }
 
+/* */
 #main-call-to-action:hover,
 #secondary-call-to-action:hover {
+    /* slightly change box shadow when we hover over it */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
 }
 
+/* when we click on the fake buttons, scale them up, edit the opacity, and change the box shadow slightly */
 #main-call-to-action:active,
 #secondary-call-to-action:active {
     transform: scale(0.96);
@@ -263,13 +299,9 @@ making it roughly the same height and width as in the bootstrap example */
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
 }
 
-
-#box-one-text {
-    font-size: 1.25rem;
-}
-
 /* Main Box Two */
 
+/* grid for all the thumbnails */
 #main-box-two-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -282,11 +314,12 @@ making it roughly the same height and width as in the bootstrap example */
     background: var(--main-thumbnail-background-color);
     padding-top: 4em;
     padding-bottom: 4rem;
-
+    /* using clamp to make the left and right padding responsive */
     padding-left: clamp(2rem, 20vw, 30em);
     padding-right: clamp(2rem, 20vw, 30em);
 }
 
+/* various thumbnail values: colour, spacing, margin, padding, flex values, etc, to try to make it look similar to bootstrap layout */
 .thumbnail-background {
     display: flex;
     justify-content: center;
@@ -319,6 +352,7 @@ making it roughly the same height and width as in the bootstrap example */
 
 /* - - - Footer - - - */
 
+/* spacing for footer, and also text colour*/
 #footer-index {
     grid-area: footer-index;
     display: flex;
@@ -327,11 +361,13 @@ making it roughly the same height and width as in the bootstrap example */
     color: grey;
 }
 
+/* text colour and decoration for footer links */
 #footer-index a {
     color: rgb(9, 181, 244);
     text-decoration: none;
 }
 
+/* clamp to make footer padding responsive */
 #footer-box-one,
 #footer-box-two {
     padding-left: clamp(2rem, 20vw, 30em);
@@ -340,6 +376,7 @@ making it roughly the same height and width as in the bootstrap example */
 
 /* - - - Media Queries - - - */
 
+/* edit to clamp values at max 1300px, for better overall formating */
 @media (max-width: 1300px) {
     #main-box-two-grid,
     #header-grid,
@@ -350,9 +387,9 @@ making it roughly the same height and width as in the bootstrap example */
     }
 }
 
-
 @media (max-width: 800px) {
 
+    /* at max 800px, stack all the thumbnails vertically */
     #main-box-two-grid {
         display: grid;
         grid-template-columns: 1fr;
@@ -370,6 +407,7 @@ making it roughly the same height and width as in the bootstrap example */
         gap: 2em;
     }
 
+    /* edit to clamp values at max 800px, for better overall formating */
     #main-box-two-grid,
     #header-grid,
     #footer-box-one,
@@ -377,5 +415,4 @@ making it roughly the same height and width as in the bootstrap example */
         padding-left: clamp(2rem, 10vw, 10em);
         padding-right: clamp(2rem, 10vw, 10em);
     }
-
 }
