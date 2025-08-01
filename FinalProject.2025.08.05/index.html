@@ -17,9 +17,10 @@
     <div class="grid-container">
 
         <header id="header">
-
+            <!-- grid to control header layout -->
             <div id="header-grid">
-
+                
+                <!-- header divided into three columns -->
                 <div id="header-grid-col-one">
                     <div id="header-logo">
                         <img id="img-logo" src="css/img/headerLogo.png" alt="Page logo.">
@@ -33,6 +34,7 @@
                 </div>
 
                 <div id="header-grid-col-three">
+                    <!-- nav sits in column 3 -->
                     <nav id="header-nav">
                         <ul id="header-navigation-ul">
                             <li><a href="https://github.com/emjanssen?tab=repositories">GitHub</a></li>
@@ -40,77 +42,76 @@
                         </ul>
                     </nav>
                 </div>
+
             </div>
+
         </header>
-        <aside class="sidebar">
-
-            <div id="sidebar-item-1">
-                <h2>~ About Me ~</h2>
-            </div>
-
-            <div id="sidebar-container-item-2-and-photo">
-
-                <div id="sidebar-item-2">
-                    <p>Computer Programming Student with a demonstrated history of
-                        transferable skills.</p>
-                    <p>Currently searching for a challenging and fulfilling
-                        opportunity to utilize existing skills, develop new competencies, and
-                        contribute to the achievement of purposeful and impactful outcomes.</p>
-                </div>
-
-                <div id="sidebar-item-photo">
-                    <img src="css/img/asideProfilePic.jpg" alt="Profile picture for Elizabeth Janssen.">
-                </div>
-
-            </div>
-
-            <div id="sidebar-item-3" class="sidebar-title">
-                <h3>// - - - Key Skills - - - //</h3>
-            </div>
-
-            <div id="sidebar-item-4">
-                <ul id="skills-list-ul">
-
-                    <li>My studies at Georgian have included HTML, CSS,
-                        JavaScript, C#, Arduino, Python, PHP, SQL, and Java.</li>
-
-                    <li>I am familiar with IntelliJ IDEA, PhpStorm, Visual Studio, Visual Studio
-                        Code, IDLE, GitHub Desktop, GitHub
-                        Pages, MySQL Workbench, and FileZilla.</li>
-                </ul>
-            </div>
-
-            <div id="sidebar-item-5" class="sidebar-title">
-                <h3># - - - Education - - - #</h3>
-            </div>
-
-            <div id="sidebar-item-6">
-                <p>In addition to my current studies at Georgian College, I've completed a Project Management
-                    Certificate at Simon Fraser University, and a Bachelor's Degree in Global Development
-                    from
-                    Queen's University. I've also been fortunate enough to participate in two student exchanges, and
-                    have studied in Belgium and Singapore.</p>
-            </div>
-
-            <div id="sidebar-item-7" class="sidebar-title">
-                <h3>/* - - - Employment - - - */</h3>
-            </div>
-
-            <div id="sidebar-item-8">
-                <p>As pertains to employment, I have worked in administrative support positions at the Vancouver Fraser
-                    Port Authority, Simon Fraser University, and several other organizations, both locally and in
-                    British Columbia.</p>
-            </div>
-        </aside>
 
         <main class="main">
+            <!-- divded into three sections: sidebar, contact, projects -->
             <div id="main-grid-container">
 
-                <div id="contact-column">
+                <!-- Sidebar -->
+                <section class="sidebar">
+                    
+                    <!-- item one -->
+                    <div id="sidebar-item-1">
+                        <h2>~ About Me ~</h2>
+                    </div>
 
+                    <!-- item two -->
+                    <!-- divded into two divs -->
+                    <div id="sidebar-container-item-2-and-photo">
+                        
+                        <div id="sidebar-item-2">
+                            <p>Computer Programming Student with a demonstrated history of
+                                transferable skills.</p>
+                            <p>Currently searching for a challenging and fulfilling
+                                opportunity to utilize existing skills, develop new competencies, and
+                                contribute to the achievement of purposeful and impactful outcomes.</p>
+                        </div>
+
+                        <div id="sidebar-item-photo">
+                            <img src="css/img/asideProfilePic.jpg" alt="Profile picture for Elizabeth Janssen.">
+                        </div>
+
+                    </div>
+
+                    <!-- item three -->
+                    <div id="sidebar-item-3" class="sidebar-title">
+                        <h3>// - - - Key Skills - - - //</h3>
+                    </div>
+
+                    <!-- item four -->
+                    <div id="sidebar-item-4">
+                        <ul id="skills-list-ul">
+                            <li>My studies at Georgian have included HTML, CSS,
+                                JavaScript, C#, Arduino, Python, PHP, SQL, and Java.</li>
+
+                            <li>I am familiar with IntelliJ IDEA, PhpStorm, Visual Studio, Visual Studio
+                                Code, IDLE, GitHub Desktop, GitHub
+                                Pages, MySQL Workbench, and FileZilla.</li>
+                        </ul>
+                    </div>
+
+                    <!-- item five -->
+                    <div id="sidebar-item-5" class="sidebar-title">
+                        <h3># - - - Education - - - #</h3>
+                    </div>
+
+                    <!-- item six -->
+                    <div id="sidebar-item-6">
+                        <p>In addition to my current studies at Georgian College, I've completed a Project Management
+                            Certificate at Simon Fraser University, and a Bachelor's Degree in Global Development
+                            from Queen's University. I've also been fortunate enough to participate in two student
+                            exchanges, and have studied in Belgium and Singapore.</p>
+                    </div>
+                </section>
+
+                <!-- Contact Column -->
+                <div id="contact">
                     <section id="section-contact-form">
                         <!-- no  action="" because this is not actually a functional form -->
-
                         <form method="post" id="form-contact-form">
                             <h3 id="form-title">Contact Me</h3>
 
@@ -137,42 +138,43 @@
                             <p>Thank you very much for submitting your contact details. I look forward to speaking with
                                 you, and I shall be in touch soon.</p>
                         </form>
-
                     </section>
-
                 </div>
 
-                <div id="projects-column">
-
+                <!-- Projects -->
+                <!-- projects column managed via grid -->
+                <div id="projects">
+                    
                     <div id="projects-title">
                         <h2>Project Portfolio</h2>
                     </div>
-
+                    
+                    <!-- project one -->
                     <div id="project-one" class="project-card">
                         <h3><a
                                 href="https://www.tinkercad.com/things/2jvBYe8I3k8-comp1045finalproject?sharecode=ogzPQXZtAk4tyz_lVFuUj9xL5_jAqvn0qv_Zetuk4UM">TinkerCad
                                 Game: Arduino</a></h3>
                         <p>A simple game created with Arduino using TinkerCad. Basic game premise: you reside in a
-                            medieval fantasy
-                            world, wherein creatures such as dragons exist day-to-day with humanoid races. Inspired by
-                            the old Tamagotchi games, you will be providing care for baby dragons, phoenixes, and
-                            gryphons.</p>
-                        <p><a href=https://github.com/emjanssen/COMP1045.FinalProject">GitHub Code</a> | Completion
+                            medieval fantasy world, wherein creatures such as dragons exist day-to-day with humanoid
+                            races. Inspired by the old Tamagotchi games, you will be providing care for baby dragons,
+                            phoenixes, and gryphons.</p>
+                        <p><a href="https://github.com/emjanssen/COMP1045.FinalProject">GitHub Code</a> | Completion
                             Date: April 2025 </p>
                     </div>
 
+                    <!-- project two -->
                     <div id="project-two" class="project-card">
                         <h3><a
                                 href="http://15.222.122.223/~Elizabeth200627709/summer2025/COMP1006-PHP/COMP1006.Assignments/Assignment1.2025.06.13/">Employee
                                 Hours: PHP, HTML, CSS, SQL</a></h3>
                         <p>A website created to track employee hours, using a combination of HTML and PHP to practice
-                            managing user input. The files are hosted on
-                            FileZilla and the database is managed using SQL Workbench. I ended up playing around
-                            with a pastel gradient theme for the CSS.</p>
+                            managing user input. The files are hosted on FileZilla and the database is managed using SQL
+                            Workbench. I ended up playing around with a pastel gradient theme for the CSS.</p>
                         <p><a href="https://github.com/emjanssen/COMP1006.Assignments/tree/main/Assignment1.2025.06.13">GitHub
                                 Code</a> | Completion Date: June 2025</p>
                     </div>
 
+                    <!-- project three -->
                     <div id="project-three" class="project-card">
                         <h3><a
                                 href="https://emjanssen.github.io/COMP1054.Summer2025.Assignments/Assignment1.2025.06.10/">Zen
@@ -185,14 +187,15 @@
                                 Code</a> | Completion Date: June 2025</p>
                     </div>
 
+                    <!-- project four -->
                     <div id="project-four" class="project-card">
                         <h3><a
                                 href="http://15.222.122.223/~Elizabeth200627709/summer2025/COMP1006-PHP/COMP1006.Assignments/Assignment2.2025.08.10/">User
                                 Account: PHP, HTML, CSS, SQL</a></h3>
                         <p>A page to practice creating a basic user account (registering an account, updating personal
                             data, deleting an account, uploading photos, ensuring that certain pages are restricted
-                            based on user login status, etc), built mostly
-                            using PHP. I went with a minty green theme for some basic CSS.</p>
+                            based on user login status, etc), built mostly using PHP. I went with a minty green theme
+                            for some basic CSS.</p>
                         <p><a href="https://github.com/emjanssen/COMP1006.Assignments/tree/main/Assignment2.2025.08.10">GitHub
                                 Code</a> | Completion Date: August 2025</p>
                     </div>
@@ -201,6 +204,7 @@
             </div>
         </main>
 
+        <!-- footer -->
         <footer class="footer">
             <p>&copy; 2025 Elizabeth Janssen. All rights reserved.</p>
         </footer>

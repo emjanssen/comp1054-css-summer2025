@@ -4,8 +4,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    /* for debug if I get horizontal scrolling 
-    outline: 1px solid red;*/
 }
 
 /* - - - Variables - - - */
@@ -30,7 +28,8 @@
     --header-font-style: normal;
 
     --header-links-font-family: "Cardo";
-
+    --text-color-header: black;
+    
     --links-unvisited-font-color: rgb(40, 100, 95);
     --links-visted-font-color: rgb(60, 120, 110);
     --links-hover-font-color: rgb(90, 150, 140);
@@ -49,32 +48,17 @@ body {
     font-family: var(--body-font-family);
     font-weight: var(--body-font-weight);
     font-style: var(--body-font-style);
-
-    /* for debug if I get horizontal scrolling
-    *overflow-x: hidden; */
 }
 
 .grid-container {
+    /* page-wide container; header, main, footer */
     display: grid;
-    /*two columns:
-    - first column takes up one fraction of the available space 
-    - second column takes up three fractions of the available space 
-    column two will always be three times as wide as column 1 */
-    grid-template-columns: 1fr 3fr;
-    /* three rows:
-    - the first row's height is based on its content 
-    - the third row's height is also based on its content 
-    - the second row takes up the remaining space */
-    grid-template-rows: auto 1fr auto;
-
+    grid-template-columns: 1fr 1fr 2fr;
+    grid-template-rows: auto auto auto;
     grid-template-areas:
-        /* header spans both columns */
-        "header header"
-        /* first column is the sidebar, second column is main */
-        "sidebar main"
-        /* footer spans both columns */
-        "footer footer";
-    /* small gap between each row and column */
+        "header header header"
+        "main main main"
+        "footer footer footer";
     gap: 1rem;
 }
 
@@ -229,7 +213,7 @@ a:active {
     grid-area: sidebar-item-2;
 }
 
-#sidebar-photo {
+#sidebar-item-photo {
     grid-area: sidebar-item-photo;
 }
 
@@ -245,22 +229,13 @@ a:active {
     border-radius: 50%;
 }
 
-#sidebar-item-2 p,
-#sidebar-item-5 ul li {
-    padding: .5rem;
+/* intro blurb */
+#sidebar-item-2 p {
+    padding: .75rem;
 }
 
-#sidebar-item-4,
-#sidebar-item-7 {
-    margin-top: .3em;
-}
-
-#sidebar-item-5 ul li {
-    list-style: none;
-}
-
-#sidebar-item-7 {
-    font-size: .95em;
+#sidebar-item-5 {
+    margin-top: .75rem;
 }
 
 .sidebar-title {
@@ -279,16 +254,16 @@ a:active {
 
 #main-grid-container {
     display: grid;
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 1fr 1fr 2fr;
     grid-template-rows: auto;
-    grid-template-areas:
-        " contact-column projects-column";
+    grid-template-areas: 
+        "sidebar contact projects";
     gap: 1rem;
 }
 
 /* Contact Column */
 
-#contact-column {
+#contact {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: auto;
@@ -339,7 +314,7 @@ a:active {
     cursor: pointer;
 }
 
-#contact-column p {
+#contact p {
     word-break: break-word;
     padding: 1em;
 }
@@ -372,9 +347,9 @@ input::placeholder {
     grid-area: project-four;
 }
 
-#projects-column {
+#projects {
+    grid-area: projects;
     display: grid;
-    grid-area: projects-column;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto auto auto;
     grid-template-areas:
@@ -385,7 +360,7 @@ input::placeholder {
     gap: 1rem;
 }
 
-#projects-column a {
+#projects a {
     text-decoration: none;
     display: inline-block;
     transition-property: transform;
@@ -393,12 +368,12 @@ input::placeholder {
     transition-timing-function: ease;
 }
 
-#projects-column h3 {
+#projects h3 {
     /* getting side-scrolling without this */
     word-break: break-word;
 }
 
-#projects-column p {
+#projects p {
     word-break: break-word;
     padding: 1em;
 }
@@ -436,57 +411,21 @@ input::placeholder {
 /* - - - Media Queries - - - */
 
 @media (max-width: 800px) {
-    .grid-container {
-        grid-template-columns: 1fr;
-        grid-template-areas:
-            "header"
-            "sidebar"
-            "main"
-            "footer";
-    }
-
     #main-grid-container {
         grid-template-columns: 1fr;
         grid-template-areas:
-            "contact-column"
-            "projects-column"
+            "sidebar"
+            "contact"
+            "projects";
     }
 
-    #header-grid {
-        grid-template-columns: 1fr 2fr 1fr;
-        grid-template-rows: auto;
-        grid-template-areas:
-            "header-grid-col-one header-grid-col-two header-grid-col-three";
-    }
-
-    #header-title h1 {
-        font-size: 1.5rem;
-    }
-
-    #header-navigation-ul {
-        flex-direction: column;
-        align-items: center;
-        gap: 0.5em;
-    }
-
-    #projects-column {
-        display: grid;
+    #projects {
         grid-template-columns: 1fr;
-        grid-template-rows: repeat(5, auto);
         grid-template-areas:
             "projects-title"
             "project-one"
             "project-two"
             "project-three"
             "project-four";
-        text-align: center;
-        gap: 1rem;
-    }
-
-    .project-card {
-        margin-top: 1.5rem;
     }
 }
-
-
-
