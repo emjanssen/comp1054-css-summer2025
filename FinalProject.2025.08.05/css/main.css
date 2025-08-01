@@ -30,10 +30,12 @@
     --header-font-style: normal;
 
     --header-links-font-family: "Cardo";
-    --links-unvisited-font-color: black;
-    --links-visted-font-color: rgb(100, 98, 158);
-    --links-hover-font-color: rgb(156, 154, 171);
-    --links-active-font-color: rgb(187, 183, 222);
+
+    --links-unvisited-font-color: rgb(40, 100, 95);
+    --links-visted-font-color: rgb(60, 120, 110);
+    --links-hover-font-color: rgb(90, 150, 140);
+    --links-active-font-color: rgb(30, 85, 80);
+    --links-focus-outline-color: rgb(115, 175, 165);
 }
 
 /* - - - Body - - - */
@@ -85,10 +87,6 @@ ul {
     list-style: none;
 }
 
-h1 {
-    padding: 0;
-}
-
 a {
     text-decoration: none;
 }
@@ -101,15 +99,11 @@ a {
     border-radius: 10px;
     box-shadow: 0 3px 8px rgba(0, 0, 0, 0.10);
     grid-area: header;
-    height: 70px;
-    
+    height: 80px;
+
     font-family: var(--header-font-family);
     font-weight: var(--header-font-weight);
     font-style: var(--header-font-style);
-}
-
-#header a {
-    color: var(--link-color-header);
 }
 
 /* header divided into three grid columns */
@@ -118,7 +112,7 @@ a {
     grid-template-columns: 1fr 4fr 1fr;
     grid-template-rows: auto;
     grid-template-areas:
-    "header-grid-col-one header-grid-col-two header-grid-col-three";
+        "header-grid-col-one header-grid-col-two header-grid-col-three";
 }
 
 /* each grid column is further managed via flex */
@@ -173,7 +167,7 @@ a {
 }
 
 a:focus {
-    outline: 2px dashed #999;
+    outline: 2px dashed var(--links-focus-outline-color);
     outline-offset: 4px;
 }
 
@@ -199,19 +193,11 @@ a:active {
 
 #img-logo {
     padding-left: .75rem;
-    height: 65px;
+    height: 80px;
     width: auto;
 }
-/* - - - Sidebar - - - */
 
-#img-profile-pic {
-    max-height: 12em;
-    width: auto;
-    margin: .25em;
-    border-radius: 50%;
-    border: rgb(110, 108, 108) 1px solid;
-    box-shadow: 0 0 8px rgba(23, 22, 22, 0.4);
-}
+/* - - - Sidebar - - - */
 
 .sidebar {
     background: var(--background-sidebar);
@@ -226,8 +212,32 @@ a:active {
     text-align: center;
 }
 
-#sidebar-container-item-2-and-3 {
+#sidebar-container-item-2-and-photo {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: 
+    "sidebar-item-2 sidebar-item-photo";
+}
+
+#sidebar-item-2 {
+    grid-area: sidebar-item-2;
+}
+
+#sidebar-photo {
+    grid-area: sidebar-item-photo;
+}
+
+#sidebar-item-photo {
     display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#sidebar-item-photo img {
+    max-width: 150px;
+    height: auto;
+    border-radius: 50%;
 }
 
 #sidebar-item-2 p,
@@ -246,6 +256,10 @@ a:active {
 
 #sidebar-item-7 {
     font-size: .95em;
+}
+
+.sidebar-title {
+    font-size: clamp(1rem, 1.75vw, 1rem);
 }
 
 /* - - - Main - - - */
@@ -352,12 +366,6 @@ a:active {
     transition-timing-function: ease;
 }
 
-#projects-column img {
-    max-height: 15em;
-    width: auto;
-    max-width: 100%;
-}
-
 #projects-column h3 {
     /* getting side-scrolling without this */
     word-break: break-word;
@@ -385,12 +393,14 @@ a:active {
 /* - - - Footer - - - */
 
 .footer {
+    display: flex;
     background: var(--background-footer);
-    padding: 1em;
     grid-area: footer;
     border-radius: 10px;
-    text-align: center;
     box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.06);
+    height: 70px;
+    justify-content: center;
+    align-items: center;
 }
 
 /* - - - Media Queries - - - */
@@ -407,91 +417,6 @@ a:active {
     }
 
     #main-grid-container {
-        grid-template-columns: 1fr;
-        grid-template-areas:
-            "projects-column"
-            "contact-column"
-    }
-
-    #header-title h1 {
-        font-size: 1.75em;
-    }
-
-    #header-navigation-ul li a {
-        font-size: .9em;
-        margin: .25em;
-    }
-
-    #header-nav {
-        margin-right: .05em;
-    }
-}
-
-@media (max-width: 800px) {
-    #header-navigation-ul {
-        flex-direction: column;
-        gap: 0;
-        text-align: center;
-        margin-right: 1.5em;
-    }
-
-        #projects-column {
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-template-areas:
-            "projects-title"
-            "project-one"
-            "project-two"
-            "project-three"
-            "project-four"
-        }
-    }
-
-@media (max-width: 1300px) {
-
-.grid-container {
-    display: grid;
-    grid-template-columns: 3fr 1fr;
-    grid-template-rows: auto 1fr auto;
-
-    grid-template-areas:
-        "header header"
-        "sidebar main"
-        "footer footer";
-    gap: 1rem;
-}
-
-    .grid-container {
-        display: grid;
-        grid-template-columns: 2fr 4fr;
-        grid-template-rows: auto 1fr auto;
-
-        grid-template-areas:
-            "header header"
-            "sidebar main"
-            "footer footer";
-        gap: 1rem;
-    }
-}
-
-@media (max-width: 1500px) {
-    #sidebar-container-item-2-and-3 {
-        flex-direction: column;
-    }
-
-    .grid-container {
-    display: grid;
-    grid-template-columns: 2fr 4fr;
-    grid-template-rows: auto 1fr auto;
-
-    grid-template-areas:
-        "header header"
-        "sidebar main"
-        "footer footer";
-    gap: 1rem;
-}
-
-        #main-grid-container {
         grid-template-columns: 1fr;
         grid-template-areas:
             "projects-column"
