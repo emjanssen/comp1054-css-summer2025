@@ -120,6 +120,7 @@ a {
 #header-grid-col-two,
 #header-grid-col-three {
     display: flex;
+    align-items: center;
 }
 
 #header-grid-col-one {
@@ -138,8 +139,8 @@ a {
     justify-content: end;
 }
 
-header-title h1 {
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+#header-title h1 {
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 #header-nav {
@@ -220,8 +221,8 @@ a:active {
     display: grid;
     grid-template-columns: 1.5fr 1fr;
     grid-template-rows: auto;
-    grid-template-areas: 
-    "sidebar-item-2 sidebar-item-photo";
+    grid-template-areas:
+        "sidebar-item-2 sidebar-item-photo";
 }
 
 #sidebar-item-2 {
@@ -280,7 +281,7 @@ a:active {
     display: grid;
     grid-template-columns: 1fr 2fr;
     grid-template-rows: auto;
-    grid-template-areas: 
+    grid-template-areas:
         " contact-column projects-column";
     gap: 1rem;
 }
@@ -314,11 +315,10 @@ a:active {
 }
 
 #form-contact-form input[type="text"],
-#form-contact-form input[type="submit"], 
+#form-contact-form input[type="submit"],
 #form-contact-form input[type="tel"],
 #form-contact-form input[type="email"],
-#form-contact-form textarea
-{
+#form-contact-form textarea {
     /* top and bottom margin of 0.5em */
     margin-top: 0.5em;
     margin-bottom: 0.5em;
@@ -435,8 +435,7 @@ input::placeholder {
 
 /* - - - Media Queries - - - */
 
-/* under 600px, stack items vertically */
-@media (max-width: 600px) {
+@media (max-width: 800px) {
     .grid-container {
         grid-template-columns: 1fr;
         grid-template-areas:
@@ -449,7 +448,45 @@ input::placeholder {
     #main-grid-container {
         grid-template-columns: 1fr;
         grid-template-areas:
-            "projects-column"
             "contact-column"
+            "projects-column"
+    }
+
+    #header-grid {
+        grid-template-columns: 1fr 2fr 1fr;
+        grid-template-rows: auto;
+        grid-template-areas:
+            "header-grid-col-one header-grid-col-two header-grid-col-three";
+    }
+
+    #header-title h1 {
+        font-size: 1.5rem;
+    }
+
+    #header-navigation-ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5em;
+    }
+
+    #projects-column {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(5, auto);
+        grid-template-areas:
+            "projects-title"
+            "project-one"
+            "project-two"
+            "project-three"
+            "project-four";
+        text-align: center;
+        gap: 1rem;
+    }
+
+    .project-card {
+        margin-top: 1.5rem;
     }
 }
+
+
+
