@@ -28,7 +28,6 @@
     --header-font-family: "Raleway";
     --header-font-weight: 400;
     --header-font-style: normal;
-    --header-title-font-size: 2.25em;
 
     --header-links-font-family: "Cardo";
     --links-unvisited-font-color: black;
@@ -82,50 +81,79 @@ h2 {
     font-family: "Playfair Display";
 }
 
+ul {
+    list-style: none;
+}
+
+h1 {
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
 /* - - - Header - - - */
 
-.header {
+#header {
     background: var(--background-header);
-    grid-area: header;
+    color: var(--text-color-header);
     border-radius: 10px;
     box-shadow: 0 3px 8px rgba(0, 0, 0, 0.10);
-
+    grid-area: header;
+    height: 70px;
+    
     font-family: var(--header-font-family);
     font-weight: var(--header-font-weight);
     font-style: var(--header-font-style);
+}
 
+#header a {
+    color: var(--link-color-header);
+}
+
+/* header divided into three grid columns */
+#header-grid {
+    display: grid;
+    grid-template-columns: 1fr 4fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+    "header-grid-col-one header-grid-col-two header-grid-col-three";
+}
+
+/* each grid column is further managed via flex */
+#header-grid-col-one,
+#header-grid-col-two,
+#header-grid-col-three {
     display: flex;
-    justify-content: space-between;
+}
+
+#header-grid-col-one {
+    grid-area: header-grid-col-one;
+    justify-content: start;
     align-items: center;
-    position: relative;
 }
 
-#header-logo {
-    flex: 1;
+#header-grid-col-two {
+    grid-area: header-grid-col-two;
+    justify-content: center;
 }
 
-#header-title {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    pointer-events: none;
+#header-grid-col-three {
+    grid-area: header-grid-col-three;
+    justify-content: end;
 }
 
 #header-nav {
-    flex: 1;
     display: flex;
-    justify-content: flex-end;
-}
-
-/* Header: Navigation */
-
-#header-nav {
-    margin-right: 2.5em;
+    align-items: center;
+    width: 100%;
 }
 
 #header-navigation-ul {
     display: flex;
-    gap: 1em;
+    width: 100%;
+    justify-content: space-evenly;
 }
 
 #header-navigation-ul li {
@@ -133,6 +161,7 @@ h2 {
     font-family: cardo;
     font-size: 1.25em;
 }
+
 
 #header-navigation-ul li a {
     text-decoration: none;
@@ -165,21 +194,14 @@ a:active {
     color: var(--links-active-font-color);
 }
 
-/* Header: Logo */
+
+/* Header Logo */
 
 #img-logo {
-    max-height: 5em;
+    padding-left: .75rem;
+    height: 65px;
     width: auto;
-    margin: .25em;
-    margin-left: .4em;
 }
-
-/* Header: Title */
-
-#header-title h1 {
-    font-size: var(--header-title-font-size);
-}
-
 /* - - - Sidebar - - - */
 
 #img-profile-pic {

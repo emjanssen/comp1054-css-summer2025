@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Elizabeth Janssen">
     <meta name="keywords" content="portfolio, biography, skills, showcase">
     <meta name="description" content="Biography and project portfolio for Elizabeth Janssen.">
@@ -16,26 +16,32 @@
 <body>
     <div class="grid-container">
 
-        <header class="header">
+        <header id="header">
 
-            <div id="header-logo">
-                <img id="img-logo" src="css/img/headerLogo.png" alt="Page logo. It is an image of a flower.">
+            <div id="header-grid">
+
+                <div id="header-grid-col-one">
+                    <div id="header-logo">
+                        <img id="img-logo" src="css/img/headerLogo.png" alt="Page logo.">
+                    </div>
+                </div>
+
+                <div id="header-grid-col-two">
+                    <div id="header-title">
+                        <h1>Elizabeth Janssen</h1>
+                    </div>
+                </div>
+
+                <div id="header-grid-col-three">
+                    <nav id="header-nav">
+                        <ul id="header-navigation-ul">
+                            <li><a href="index.php">GitHub</a></li>
+                            <li><a href="login.php">Linked</a></li>
+                        </ul>
+                    </nav>
+                </div>
             </div>
-
-            <div id="header-title">
-                <h1>Elizabeth Janssen</h1>
-            </div>
-
-            <nav id="header-nav">
-                <ul id="header-navigation-ul">
-                    <li id="li-item-1"><a href="https://www.linkedin.com/in/elizabeth-janssen-a6760561/">LinkedIn</a>
-                    </li>
-                    <li id="li-item-2"><a href="https://github.com/emjanssen">GitHub</a></li>
-                </ul>
-            </nav>
-
         </header>
-
         <aside class="sidebar">
 
             <div id="sidebar-item-1">
@@ -61,8 +67,6 @@
                 <h3>// - - - Key Skills - - - //</h3>
             </div>
 
-
-
             <div id="sidebar-item-5">
                 <ul id="skills-list-ul">
 
@@ -87,11 +91,11 @@
                     have studied in Belgium and Singapore.</p>
             </div>
 
-            <div id="sidebar-item-6">
+            <div id="sidebar-item-8">
                 <h3>/* - - - Employment - - - */</h3>
             </div>
 
-            <div id="sidebar-item-7">
+            <div id="sidebar-item-9">
                 <p>As pertains to employment, I have worked in administrative support positions at the Vancouver Fraser
                     Port Authority, Simon Fraser University, and several other organizations.</p>
             </div>
