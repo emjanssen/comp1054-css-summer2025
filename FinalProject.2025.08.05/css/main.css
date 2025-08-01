@@ -40,7 +40,6 @@
 
 /* - - - Body - - - */
 
-
 body {
     background: var(--background-body);
     background-repeat: no-repeat;
@@ -281,7 +280,9 @@ a:active {
     display: grid;
     grid-template-columns: 1fr 2fr;
     grid-template-rows: auto;
-    gap: 2rem;
+    grid-template-areas: 
+        " contact-column projects-column";
+    gap: 1rem;
 }
 
 /* Contact Column */
@@ -313,18 +314,29 @@ a:active {
 }
 
 #form-contact-form input[type="text"],
-#form-contact-form input[type="submit"] {
+#form-contact-form input[type="submit"], 
+#form-contact-form input[type="tel"],
+#form-contact-form input[type="email"],
+#form-contact-form textarea
+{
     /* top and bottom margin of 0.5em */
-    margin: 0.5em 0;
-    /* gives the input fields a bit of padding*/
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
     padding: 0.5em;
     border: 1px solid #ccc;
-    border-radius: 5px;
 }
 
 /* make submit button somewhat small */
 #form-contact-form input[type="submit"] {
     max-width: 30%;
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+#form-contact-form input[type="submit"]:hover {
+    transform: translateY(1px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+    background: linear-gradient(135deg, #fdfdfd, #f1f1f1);
+    cursor: pointer;
 }
 
 #contact-column p {
@@ -362,6 +374,7 @@ input::placeholder {
 
 #projects-column {
     display: grid;
+    grid-area: projects-column;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto auto auto;
     grid-template-areas:
