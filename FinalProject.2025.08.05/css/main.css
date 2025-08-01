@@ -410,7 +410,7 @@ input::placeholder {
 
 /* - - - Media Queries - - - */
 
-@media (max-width: 800px) {
+@media (max-width: 600px) {
     #main-grid-container {
         grid-template-columns: 1fr;
         grid-template-areas:
@@ -427,5 +427,39 @@ input::placeholder {
             "project-two"
             "project-three"
             "project-four";
+    }
+}
+
+@media (min-width: 601px) and (max-width: 1200px) {
+    #main-grid-container {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            "sidebar contact"
+            "projects projects";
+    }
+
+    #projects {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            "projects-title"
+            "project-one project-two"
+            "project-three project-four";
+    }
+}
+
+@media (min-width: 1201px) and (max-width: 1400px) {
+    #main-grid-container {
+        grid-template-columns: 1.5fr 1.5fr;
+        grid-template-areas:
+            "sidebar contact"
+            "projects projects";
+    }
+
+    #projects {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            "projects-title"
+            "project-one project-two"
+            "project-three project-four";
     }
 }
