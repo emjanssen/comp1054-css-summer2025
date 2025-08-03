@@ -61,6 +61,7 @@ body {
     gap: 1rem;
 }
 
+/* h2 mostly used in the sidebar */
 h2 {
     font-family: "Playfair Display";
 }
@@ -78,9 +79,12 @@ a {
 #header {
     background: var(--background-header);
     color: var(--text-color-header);
+    /* soft the edges just slightly */
     border-radius: 10px;
+    /* slight box shadow effect around the header */
     box-shadow: 0 3px 8px rgba(0, 0, 0, 0.10);
     grid-area: header;
+    /* going to give a fixed px height, because it'll work fine on any device width */
     height: 80px;
     margin-bottom: .5rem;
 
@@ -106,6 +110,7 @@ a {
     align-items: center;
 }
 
+/* formatting for the different header columns */
 #header-grid-col-one {
     grid-area: header-grid-col-one;
     justify-content: start;
@@ -122,29 +127,33 @@ a {
     justify-content: end;
 }
 
+/* slight shadow effect for the page title text */
 #header-title h1 {
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 #header-nav {
     display: flex;
+    /* make nav cover 100% of its parent container */
     align-items: center;
     width: 100%;
 }
 
 #header-navigation-ul {
     display: flex;
+    /* make nav ul cover 100% of its parent container */
     width: 100%;
     justify-content: space-evenly;
 }
 
+/* specific font family and size for nav links, and also padding; will resize padding in media queries */
 #header-navigation-ul li {
-    list-style: none;
     font-family: cardo;
     font-size: 1.25em;
     padding: 1em;
 }
 
+/* transform so we can have an effect when we hover over the links */
 #header-navigation-ul li a {
     text-decoration: none;
     display: inline-block;
@@ -154,8 +163,10 @@ a {
     font-family: var(--header-links-font-family);
 }
 
+/* styling for links in their variours forms; mostly colour, but also adding hover transform */
 a:focus {
     outline: 2px dashed var(--links-focus-outline-color);
+    /* slight gap between element and outline, so link looks a bit less squished on focus (i.e. active keyboard target) */
     outline-offset: 4px;
 }
 
@@ -191,8 +202,10 @@ a:active {
     background: var(--background-sidebar);
     padding: 1em;
     grid-area: sidebar;
+    /* slight softening of the dges */
     border-radius: 10px;
     color: #2a2a2a;
+    /* little bit of a shadow around sidebar*/
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.07);
     display: flex;
     flex-direction: column;
@@ -200,6 +213,7 @@ a:active {
     text-align: center;
 }
 
+/* this handles the 'about' blurb and profile photo */
 #sidebar-container-item-2-and-photo {
     display: grid;
     grid-template-columns: 1.5fr 1fr;
@@ -216,12 +230,14 @@ a:active {
     grid-area: sidebar-item-photo;
 }
 
+/* centers the photo horizontally and vertically */
 #sidebar-item-photo {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
+/* stop actual img from getting too sizable; also, soften edges/make photo into an oval */
 #sidebar-item-photo img {
     max-width: 150px;
     height: auto;
@@ -237,6 +253,7 @@ a:active {
     margin-top: .75rem;
 }
 
+/* so the titles in the sidebar resize if needed; the sidebar content moves around a fair bit  */
 .sidebar-title {
     font-size: clamp(1rem, 1.75vw, 1rem);
 }
@@ -251,6 +268,7 @@ a:active {
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
 }
 
+/* grid container for the sidebar, contacts, and projects sections */
 #main-grid-container {
     display: grid;
     grid-template-columns: 1fr 1fr 2fr;
@@ -269,6 +287,7 @@ a:active {
     margin: 1em;
 }
 
+/* for the form, slight softening of the edges, a bit of padding, a bit of shadow */
 #form-contact-form {
     display: flex;
     flex-direction: column;
@@ -288,32 +307,38 @@ a:active {
     max-width: 100%;
 }
 
+/* targets all the input labels/areas in the form */
 #form-contact-form input[type="text"],
 #form-contact-form input[type="submit"],
 #form-contact-form input[type="tel"],
 #form-contact-form input[type="email"],
 #form-contact-form textarea {
-    /* top and bottom margin of 0.5em */
     margin-top: 0.5em;
     margin-bottom: 0.5em;
     padding: 0.5em;
     border: 1px solid #ccc;
 }
 
-/* make submit button somewhat small */
+/* make submit button somewhat small and give it a transform effect */
 #form-contact-form input[type="submit"] {
     max-width: 30%;
     transition: transform 0.5s ease, box-shadow 0.5s ease;
 }
 
+/* trigger button transform on hover */
 #form-contact-form input[type="submit"]:hover {
+    /* shift it 1px */
     transform: translateY(1px);
+    /* add a little box shadow */
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+    /* alter background colour */
     background: linear-gradient(135deg, #fdfdfd, #f1f1f1);
+    /* form isn't actually functional, so giving it a cursor icon to make it look clickable */
     cursor: pointer;
 }
 
 #contact p {
+    /* stop long urls from breaking layout; allow wrap at any character */
     word-break: break-word;
     padding: 1em;
 }
@@ -326,6 +351,7 @@ input::placeholder {
 
 /* Projects Column */
 
+/* four individual project sections */
 #projects-title {
     grid-area: projects-title;
 }
@@ -346,6 +372,7 @@ input::placeholder {
     grid-area: project-four;
 }
 
+/* grid layout for the projects column */
 #projects {
     grid-area: projects;
     display: grid;
@@ -359,6 +386,7 @@ input::placeholder {
     gap: 1rem;
 }
 
+/* add a trasform effect to the links in the projects section*/
 #projects a {
     text-decoration: none;
     display: inline-block;
@@ -377,6 +405,7 @@ input::placeholder {
     padding: 1em;
 }
 
+/* for each card, have a bit of shadow, soften the border edges, and add transform and box shadow effects upon transition */
 .project-card {
     background: #ffffff;
     border-radius: 12px;
@@ -385,10 +414,13 @@ input::placeholder {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     margin: .25rem;
     margin-top: 1.5rem;
+    /* tells browswer ahead of time that these elements will change; was getting lagging, added this to try to help; going to leave it */
     will-change: transform;
 }
 
+/* effect for when we hover over the project cards */
 .project-card:hover {
+    /* shift -5 px, add a box shadow, slightly change the background */
     transform: translateY(-5px);
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
     background: linear-gradient(135deg, #fdfdfd, #f1f1f1);
@@ -403,13 +435,16 @@ input::placeholder {
     grid-area: footer;
     border-radius: 10px;
     box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.06);
+    /* giving footer a fix px height, because this will work fine with our design at any page width */
     height: 70px;
+    /* center content horizonally and vertically */
     justify-content: center;
     align-items: center;
 }
 
 /* - - - Media Queries - - - */
 
+/* put each of the grids in one column at max 700px*/
 @media (max-width: 700px) {
     #main-grid-container {
         grid-template-columns: 1fr;
@@ -429,6 +464,7 @@ input::placeholder {
             "project-four";
     }
 
+    /* make sure title text is somewhatr smaller, and edit padding for nav links so everything fits a bit better*/
     #header-title h1 {
         font-size: 1.5rem;
     }
@@ -439,6 +475,7 @@ input::placeholder {
     }
 }
 
+/* moving most grids into two columns from 701px on*/
 @media (min-width: 701px) and (max-width: 1200px) {
     #main-grid-container {
         grid-template-columns: 1fr 1fr;
@@ -455,6 +492,7 @@ input::placeholder {
             "project-three project-four";
     }
 
+    /* put profile photo above 'about me' text */
     #sidebar-container-item-2-and-photo {
         display: grid;
         grid-template-columns: 1fr;
@@ -465,6 +503,7 @@ input::placeholder {
     }
 }
 
+/* similar to above, but slightly ammend column sizes for main grid container */
 @media (min-width: 1201px) and (max-width: 1400px) {
     #main-grid-container {
         grid-template-columns: 1.5fr 1.5fr;
@@ -473,6 +512,7 @@ input::placeholder {
             "projects projects";
     }
 
+    /* keep project cards in two columns */
     #projects {
         grid-template-columns: 1fr 1fr;
         grid-template-areas:
@@ -485,6 +525,7 @@ input::placeholder {
 
 @media (min-width: 1401px) and (max-width: 1600px) {
 
+    /* put photo above 'about me' paragraph */
     #sidebar-container-item-2-and-photo {
         display: grid;
         grid-template-columns: 1fr;
