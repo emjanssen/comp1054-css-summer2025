@@ -410,7 +410,7 @@ input::placeholder {
 
 /* - - - Media Queries - - - */
 
-@media (max-width: 600px) {
+@media (max-width: 700px) {
     #main-grid-container {
         grid-template-columns: 1fr;
         grid-template-areas:
@@ -430,7 +430,7 @@ input::placeholder {
     }
 }
 
-@media (min-width: 601px) and (max-width: 1200px) {
+@media (min-width: 701px) and (max-width: 1200px) {
     #main-grid-container {
         grid-template-columns: 1fr 1fr;
         grid-template-areas:
@@ -445,6 +445,16 @@ input::placeholder {
             "project-one project-two"
             "project-three project-four";
     }
+
+    #sidebar-container-item-2-and-photo {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+        "sidebar-item-photo"
+        "sidebar-item-2";
+}
+
 }
 
 @media (min-width: 1201px) and (max-width: 1400px) {
@@ -462,4 +472,17 @@ input::placeholder {
             "project-one project-two"
             "project-three project-four";
     }
+    
+}
+
+@media (min-width: 1401px) and (max-width: 1600px) {
+
+    #sidebar-container-item-2-and-photo {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+        "sidebar-item-photo"
+        "sidebar-item-2";
+}
 }
