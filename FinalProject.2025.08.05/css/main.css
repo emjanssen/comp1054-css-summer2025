@@ -407,3 +407,90 @@ input::placeholder {
     justify-content: center;
     align-items: center;
 }
+
+/* - - - Media Queries - - - */
+
+@media (max-width: 700px) {
+    #main-grid-container {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "sidebar"
+            "contact"
+            "projects";
+    }
+
+    #projects {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "projects-title"
+            "project-one"
+            "project-two"
+            "project-three"
+            "project-four";
+    }
+
+    #header-title h1 {
+        font-size: 1.5rem;
+    }
+
+    #header-navigation-ul li {
+        padding: .4em;
+        padding-left: 0;
+    }
+}
+
+@media (min-width: 701px) and (max-width: 1200px) {
+    #main-grid-container {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            "sidebar contact"
+            "projects projects";
+    }
+
+    #projects {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            "projects-title"
+            "project-one project-two"
+            "project-three project-four";
+    }
+
+    #sidebar-container-item-2-and-photo {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        grid-template-areas:
+            "sidebar-item-photo"
+            "sidebar-item-2";
+    }
+}
+
+@media (min-width: 1201px) and (max-width: 1400px) {
+    #main-grid-container {
+        grid-template-columns: 1.5fr 1.5fr;
+        grid-template-areas:
+            "sidebar contact"
+            "projects projects";
+    }
+
+    #projects {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            "projects-title"
+            "project-one project-two"
+            "project-three project-four";
+    }
+
+}
+
+@media (min-width: 1401px) and (max-width: 1600px) {
+
+    #sidebar-container-item-2-and-photo {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        grid-template-areas:
+            "sidebar-item-photo"
+            "sidebar-item-2";
+    }
+}
