@@ -29,7 +29,7 @@
 
     --header-links-font-family: "Cardo";
     --text-color-header: black;
-    
+
     --links-unvisited-font-color: rgb(40, 100, 95);
     --links-visted-font-color: rgb(60, 120, 110);
     --links-hover-font-color: rgb(90, 150, 140);
@@ -143,8 +143,8 @@ a {
     list-style: none;
     font-family: cardo;
     font-size: 1.25em;
+    padding: 1em;
 }
-
 
 #header-navigation-ul li a {
     text-decoration: none;
@@ -256,7 +256,7 @@ a:active {
     display: grid;
     grid-template-columns: 1fr 1fr 2fr;
     grid-template-rows: auto;
-    grid-template-areas: 
+    grid-template-areas:
         "sidebar contact projects";
     gap: 1rem;
 }
@@ -428,6 +428,15 @@ input::placeholder {
             "project-three"
             "project-four";
     }
+
+    #header-title h1 {
+        font-size: 1.5rem;
+    }
+
+    #header-navigation-ul li {
+        padding: .4em;
+        padding-left: 0;
+    }
 }
 
 @media (min-width: 701px) and (max-width: 1200px) {
@@ -447,42 +456,41 @@ input::placeholder {
     }
 
     #sidebar-container-item-2-and-photo {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: auto;
-    grid-template-areas:
-        "sidebar-item-photo"
-        "sidebar-item-2";
-}
-
-}
-
-@media (min-width: 1201px) and (max-width: 1400px) {
-    #main-grid-container {
-        grid-template-columns: 1.5fr 1.5fr;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
         grid-template-areas:
-            "sidebar contact"
-            "projects projects";
+            "sidebar-item-photo"
+            "sidebar-item-2";
     }
 
-    #projects {
-        grid-template-columns: 1fr 1fr;
-        grid-template-areas:
-            "projects-title"
-            "project-one project-two"
-            "project-three project-four";
+    @media (min-width: 1201px) and (max-width: 1400px) {
+        #main-grid-container {
+            grid-template-columns: 1.5fr 1.5fr;
+            grid-template-areas:
+                "sidebar contact"
+                "projects projects";
+        }
+
+        #projects {
+            grid-template-columns: 1fr 1fr;
+            grid-template-areas:
+                "projects-title"
+                "project-one project-two"
+                "project-three project-four";
+        }
+
     }
-    
-}
 
-@media (min-width: 1401px) and (max-width: 1600px) {
+    @media (min-width: 1401px) and (max-width: 1600px) {
 
-    #sidebar-container-item-2-and-photo {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: auto;
-    grid-template-areas:
-        "sidebar-item-photo"
-        "sidebar-item-2";
-}
+        #sidebar-container-item-2-and-photo {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: auto;
+            grid-template-areas:
+                "sidebar-item-photo"
+                "sidebar-item-2";
+        }
+    }
 }
