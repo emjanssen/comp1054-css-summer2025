@@ -2,4 +2,4 @@ Assignments for COMP1054 - Interface Design Using CSS (Summer 2025).
 
 GitHub pages link goes to a list of the assignments.
 
-Assignment list: https://emjanssen.github.io/COMP1054-css-summer2025/
+Assignment list: https://emjanssen.github.io/comp1054-css-summer2025/
